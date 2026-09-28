@@ -491,6 +491,15 @@ footer {
   flex-wrap: wrap
 }
 
+.footer-association {
+  display: grid;
+  gap: 6px
+}
+
+.footer-association address {
+  font-style: normal
+}
+
 .menu {
   display: none
 }
