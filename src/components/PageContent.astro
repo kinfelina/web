@@ -1,0 +1,34 @@
+---
+import AboutContent from './AboutContent.astro';
+import ColoniesContent from './ColoniesContent.astro';
+import ContactContent from './ContactContent.astro';
+import DonationsContent from './DonationsContent.astro';
+import HomeContent from './HomeContent.astro';
+import PhilosophyContent from './PhilosophyContent.astro';
+import { locales } from '../i18n/index.js';
+
+const { language, pageId } = Astro.props;
+const locale = locales[language];
+const page = locale.pages[pageId];
+const pageComponents = {
+  home: HomeContent,
+  about: AboutContent,
+  philosophy: PhilosophyContent,
+  colonies: ColoniesContent,
+  donations: DonationsContent,
+  contact: ContactContent
+};
+const PageComponent = pageComponents[pageId];
+---
+
+{pageId === 'home' ? null : (
+  <section class="page-heading">
+    <div class="wrap">
+      <div class="kicker">{page.eyebrow}</div>
+      <h1>{page.title}</h1>
+      <p class="lead">{page.intro}</p>
+    </div>
+  </section>
+)}
+
+<PageComponent language={language} locale={locale} page={page} />

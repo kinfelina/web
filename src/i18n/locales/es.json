@@ -1,0 +1,154 @@
+{
+  "locale": "es-ES",
+  "languageName": "Español",
+  "navigation": [
+    { "id": "about", "label": "Nosotros", "slug": "quienes-somos" },
+    { "id": "philosophy", "label": "La idea KIN", "slug": "la-idea-kin" },
+    { "id": "colonies", "label": "Colonias", "slug": "colonias" },
+    { "id": "donations", "label": "Donar", "slug": "donaciones" },
+    { "id": "contact", "label": "Contacto", "slug": "contacto" }
+  ],
+  "languageLabel": "Idioma",
+  "navigationLabel": "Navegación principal",
+  "menuLabel": "Menú",
+  "brandLabel": "Kin Felina, inicio",
+  "footer": {
+    "legalName": "ASOCIACIÓN KIN FELINA - GESTIÓN ÉTICA DE COLONIAS FELINAS",
+    "address": "Barriada de Moras nº7, Sorbas (Almería), España CP 04279",
+    "taxId": "NIF: G88844782",
+    "signature": "© 2026 Kin Felina · Hecho con 🐾 y mucho respeto"
+  },
+  "pages": {
+    "home": {
+      "title": "La conexión entre todos los seres vivos.",
+      "description": "Cuidamos, protegemos y mejoramos el bienestar de los gatos comunitarios de Sorbas con una gestión ética y responsable.",
+      "eyebrow": "Asociación felina · Sorbas",
+      "intro": "Cuidamos, protegemos y mejoramos el bienestar de los gatos comunitarios, impulsando una gestión ética y responsable de las colonias felinas.",
+      "primaryAction": "💚 Quiero ayudar",
+      "secondaryAction": "Conoce el proyecto →",
+      "signoff": "Ayuda · Cuida · Respeta · Convive",
+      "brandTagline": "La conexión entre todos los seres vivos",
+      "overviewEyebrow": "Nuestro trabajo",
+      "overviewTitle": "Una red de personas para proteger vidas.",
+      "overviewText": "Conoce cómo trabajamos y descubre las distintas formas de colaborar con los gatos comunitarios de Sorbas.",
+      "heroImageAction": "¡Miau!",
+      "heroImageTitle": "Haz clic para ver otro michi 🐾",
+      "aboutRouteLabel": "Nuestra historia y compromiso",
+      "philosophyRouteLabel": "La mirada que guía nuestro cuidado",
+      "coloniesRouteLabel": "Gestión ética sobre el terreno",
+      "donationsRouteLabel": "Apoya el trabajo de la asociación",
+      "contactRouteLabel": "Colabora con nuestra red",
+      "instagramTitle": "También estamos en Instagram",
+      "instagramText": "Descubre nuestro día a día y acompaña el trabajo de Kin Felina."
+    },
+    "about": {
+      "title": "Una red de personas para proteger vidas.",
+      "description": "Conoce Kin Felina y nuestro compromiso con el bienestar animal y la convivencia en Sorbas.",
+      "eyebrow": "Quiénes somos",
+      "intro": "Kin Felina nace para acompañar a los gatos comunitarios y a las personas que conviven con ellos. Trabajamos desde el respeto, la prevención y la responsabilidad.",
+      "values": [
+        { "emoji": "🐾", "title": "Bienestar animal", "text": "Alimentación, atención, refugio y seguimiento de los gatos de nuestras colonias." },
+        { "emoji": "⚖️", "title": "Gestión ética", "text": "Promovemos actuaciones responsables y sostenibles para mejorar la convivencia." },
+        { "emoji": "🤝", "title": "Comunidad", "text": "Colaboramos con vecinos y voluntariado para construir soluciones duraderas." }
+      ],
+      "storyTitle": "Una labor que ya estaba en marcha",
+      "storyText": "La actividad de Kin Felina comenzó sobre el terreno en 2023, coincidiendo con la implantación de la Ley 7/2023. Las primeras actuaciones se desarrollaron en Los Molinos y en distintos puntos del casco urbano de Sorbas, y después se extendieron a Moras y a otros núcleos del municipio. La asociación se constituyó formalmente el 1 de abril de 2026 para dar continuidad, estructura y capacidad de coordinación a ese trabajo voluntario.",
+      "territoryTitle": "Un territorio que exige red",
+      "territoryText": "Sorbas reúne una superficie aproximada de 249 km², menos de 3.000 habitantes y cerca de cuarenta aldeas, barriadas, cortijadas y núcleos dispersos. Las distancias, el envejecimiento demográfico y la falta de servicios especializados hacen necesario un modelo adaptado al medio rural.",
+      "territoryFacts": [
+        { "value": "249 km²", "label": "de superficie municipal" },
+        { "value": "< 3.000", "label": "habitantes" },
+        { "value": "~ 40", "label": "núcleos y aldeas" }
+      ],
+      "networkTitle": "Conectar lo que ya existe",
+      "networkText": "Kin Felina quiere actuar como elemento vertebrador entre ciudadanía, personas cuidadoras, voluntariado, profesionales veterinarios, propietarios colaboradores y administraciones públicas. El objetivo es ampliar progresivamente el mapeo, censo y seguimiento de las colonias de todo el término municipal."
+    },
+    "philosophy": {
+      "title": "Pertenecer a un mundo compartido.",
+      "description": "La idea KIN: una mirada sobre la pertenencia, el cuidado y las relaciones entre todos los seres vivos.",
+      "eyebrow": "La idea KIN",
+      "intro": "KIN FELINA nace alrededor de los gatos y de las personas que cuidan de ellos. Pero KIN expresa algo más amplio: que el cuidado comienza cuando reconocemos que estamos relacionados.",
+      "sections": [
+        {
+          "title": "¿Hasta dónde llega aquello que consideramos los nuestros?",
+          "text": "Kin es una palabra inglesa sencilla: habla de las personas próximas, de quienes sentimos parte de nuestro círculo. En KIN FELINA, esa idea no se limita a la familia ni al parentesco biológico. Nos invita a preguntarnos con quién compartimos el mundo y qué vínculos nos unen a otros seres vivos.",
+          "aside": "La vida nunca es completamente aislada. Cuidamos, dependemos, compartimos y somos transformados por aquello con lo que estamos vinculados."
+        },
+        {
+          "title": "De la familia a la relación",
+          "text": "Marshall Sahlins describió el parentesco como una mutualidad del ser: una forma de pertenencia en la que participamos en la existencia de los demás. Lo que le sucede a una persona puede afectar profundamente a otra. Esta idea también nos ayuda a comprender la relación entre las personas, los gatos, el territorio y la comunidad.",
+          "aside": "Pertenecer no es solo compartir un origen. También es participar en la vida de otros."
+        },
+        {
+          "title": "Una mirada multiespecie",
+          "text": "La perspectiva multiespecie cuestiona la idea de que los seres humanos ocupamos un mundo separado del resto de la vida. No borra las diferencias entre especies ni afirma que todos los seres sean iguales. Propone prestar atención a los mundos que construimos juntos y a las relaciones de las que dependemos.",
+          "aside": "Interdependencia · cuidado · convivencia · reciprocidad · pertenencia · responsabilidad"
+        }
+      ],
+      "closingTitle": "Construir red",
+      "closingText": "Por eso KIN FELINA no quiere ser únicamente una estructura para intervenir sobre los animales. Quiere conectar a personas que hoy trabajan de manera aislada, reconocer a quienes ya están cuidando y crear colaboración donde antes había fragmentación.",
+      "question": "¿A quién estamos dispuestos a reconocer como parte de nuestro mundo?",
+      "referencesTitle": "Referencias de base",
+      "references": [
+        "Lévi-Strauss, Claude (1964), Totemism.",
+        "Sahlins, Marshall (2013), What Kinship Is—and Is Not.",
+        "Strang, Veronica (2023), Living kindness: Re-imagining kinship for a more humane future.",
+        "Nathan, Vetri (2026), Our Multispecies Futures: Control, Care and Kinship in a Transformed World."
+      ]
+    },
+    "colonies": {
+      "title": "Gestionar también es cuidar.",
+      "description": "Así trabajamos por el bienestar de las colonias felinas de Sorbas.",
+      "eyebrow": "Colonias felinas",
+      "intro": "El objetivo es reducir el sufrimiento, controlar la reproducción y favorecer una convivencia equilibrada entre gatos y vecinos.",
+      "points": [
+        { "title": "Identificación y seguimiento", "text": "Conocer a cada animal y su evolución." },
+        { "title": "Esterilización", "text": "Prevenir camadas y mejorar el bienestar." },
+        { "title": "Atención veterinaria", "text": "Actuar ante enfermedades, heridas o emergencias." },
+        { "title": "Convivencia", "text": "Información y diálogo con el entorno." }
+      ],
+      "methodTitle": "Ayuda · Cuida · Respeta · Convive",
+      "methodText": "El lema de Kin Felina",
+      "contextTitle": "Gestionar colonias en un municipio disperso",
+      "contextText": "En Sorbas, las colonias se distribuyen entre el casco urbano y numerosas barriadas y aldeas. La gestión ética requiere mucho más que esterilizar: también implica identificar animales, observar su estado, coordinar a las personas cuidadoras, asegurar la atención veterinaria y mantener una trazabilidad básica de cada actuación.",
+      "programTitle": "Una colaboración que complementa recursos",
+      "programText": "El Ayuntamiento de Sorbas inició en 2024 la elaboración de su Programa Municipal de Gestión de Colonias Felinas y comenzó a ejecutar actuaciones CER a finales de 2025. Kin Felina valora ese avance y trabaja para reforzar los ámbitos que necesitan continuidad: seguimiento sanitario, alimentación, logística, coordinación y apoyo a las personas que ya cuidan de las colonias.",
+      "logisticsTitle": "Apoyo logístico sobre el terreno",
+      "logisticsText": "La asociación dispone de una parcela y un pequeño espacio de almacenamiento junto a una de las principales colonias de Moras. No se plantea como refugio, sino como infraestructura de apoyo para conservar alimento y material de manejo, organizar transportines y jaulas de recuperación y facilitar actuaciones veterinarias temporales."
+    },
+    "donations": {
+      "title": "Cada aportación se convierte en cuidado.",
+      "description": "Colabora con Kin Felina y ayuda a cuidar a los gatos comunitarios de Sorbas.",
+      "eyebrow": "Donaciones",
+      "intro": "Tu apoyo nos permite seguir cuidando a los gatos comunitarios de Sorbas y mejorar su bienestar. Gracias por colaborar.",
+      "impactEyebrow": "Tu ayuda, en el día a día",
+      "impactTitle": "Cada aportación ayuda a sostener los cuidados.",
+      "impactText": "Las donaciones contribuyen a mantener el trabajo continuado con las colonias felinas de Sorbas y a responder a las necesidades que surgen sobre el terreno.",
+      "impactAreas": [
+        { "emoji": "🩺", "title": "Atención veterinaria", "text": "Ayuda a atender enfermedades, heridas y otras necesidades de salud de los gatos comunitarios." },
+        { "emoji": "🥣", "title": "Alimentación y cuidados", "text": "Contribuye a proporcionar alimento y a seguir de cerca el bienestar de los gatos de las colonias." },
+        { "emoji": "📦", "title": "Material y logística", "text": "Apoya la disponibilidad de transportines, jaulas de recuperación y otros recursos para las actuaciones sobre el terreno." }
+      ],
+      "payments": [
+        { "label": "Transferencia Cajamar", "title": "Cuenta bancaria", "value": "ES80 3058 0048 1627 2001 8220" },
+        { "label": "Bizum", "title": "Donaciones", "value": "672 572 615" }
+      ]
+    },
+    "contact": {
+      "title": "¿Quieres formar parte?",
+      "description": "Contacta con Kin Felina para colaborar o recibir información.",
+      "eyebrow": "Contacto",
+      "intro": "Voluntariado, acogidas, donaciones o colaboración con las colonias: escríbenos.",
+      "contactHeading": "Escríbenos",
+      "honeypotLabel": "No rellenes este campo:",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "Tu correo electrónico",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "¿En qué podemos ayudarte?",
+      "submit": "Enviar mensaje",
+      "email": "asoc.kinfelina@gmail.com"
+    }
+  }
+}

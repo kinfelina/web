@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import donationCat from '../assets/img/gatos/DSC02779_edited.jpg';
+
+const { page } = Astro.props;
+---
+
+<section class="content-section">
+  <div class="wrap donations-layout">    
+    <div class="donation">
+      <div class="donation-grid">
+        {page.payments.map((payment) => (
+          <div class="pay">
+            <small>{payment.label}</small>
+            <strong>{payment.title}</strong>
+            <code>{payment.value}</code>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="donation-photo-card">
+      <Image
+        src={donationCat}
+        alt="Tu aportación ayuda al bienestar de los gatos comunitarios"
+        class="donation-img"
+        width={720}
+        height={500}
+        format="webp"
+        quality={82}
+      />
+    </div>
+  </div>
+</section>
+
+<section class="content-section colony-context">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">{page.impactEyebrow}</div>
+      <h2>{page.impactTitle}</h2>
+      <p>{page.impactText}</p>
+    </div>
+    <div class="cards donation-impact-grid">
+      {page.impactAreas.map((area) => (
+        <article class="card">
+          <div class="icon" aria-hidden="true">{area.emoji}</div>
+          <h2>{area.title}</h2>
+          <p>{area.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

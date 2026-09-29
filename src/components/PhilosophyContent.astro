@@ -1,0 +1,34 @@
+---
+const { page } = Astro.props;
+---
+
+<section class="content-section philosophy-intro">
+  <div class="wrap philosophy-grid">
+    {page.sections.map((section, index) => (
+      <article class="philosophy-block">
+        <span class="philosophy-number">0{index + 1}</span>
+        <h2>{section.title}</h2>
+        <p>{section.text}</p>
+        <p class="philosophy-aside">{section.aside}</p>
+      </article>
+    ))}
+  </div>
+</section>
+<section class="philosophy-closing">
+  <div class="wrap closing-grid">
+    <div>
+      <div class="kicker">KIN FELINA</div>
+      <h2>{page.closingTitle}</h2>
+      <p>{page.closingText}</p>
+    </div>
+    <blockquote>{page.question}</blockquote>
+  </div>
+</section>
+<section class="content-section references-section">
+  <div class="wrap references">
+    <h2>{page.referencesTitle}</h2>
+    <ul>
+      {page.references.map((reference) => <li>{reference}</li>)}
+    </ul>
+  </div>
+</section>

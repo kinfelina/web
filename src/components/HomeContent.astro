@@ -1,0 +1,136 @@
+---
+import { getImage } from 'astro:assets';
+import { getLocalizedPath } from '../i18n/routes.js';
+
+const { language, locale, page } = Astro.props;
+const routeLabels = {
+  about: page.aboutRouteLabel,
+  philosophy: page.philosophyRouteLabel,
+  colonies: page.coloniesRouteLabel,
+  donations: page.donationsRouteLabel,
+  contact: page.contactRouteLabel
+};
+
+const catImports = import.meta.glob('../assets/img/gatos/*.jpg', { eager: true });
+const rawCatImages = Object.values(catImports).map((mod) => mod.default);
+
+const heroCats = await Promise.all(
+  rawCatImages.map((img) =>
+    getImage({
+      src: img,
+      width: 800,
+      height: 800,
+      format: 'webp',
+      quality: 82
+    })
+  )
+);
+const defaultHeroImage = heroCats[0];
+const heroCatUrls = heroCats.map((c) => c.src);
+---
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">{page.eyebrow}</span>
+      <h1>{page.title}</h1>
+      <p class="lead">{page.intro}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={getLocalizedPath(language, 'donations')}>{page.primaryAction}</a>
+        <a class="btn btn-light" href={getLocalizedPath(language, 'about')}>{page.secondaryAction}</a>
+      </div>
+      <p class="hero-note">{page.signoff}</p>
+    </div>
+    <div class="hero-card">
+      <div class="poster hero-poster" aria-label={page.brandTagline} id="hero-cat-card">
+        <img
+          id="hero-cat-image"
+          class="poster-cat-img"
+          src={defaultHeroImage.src}
+          width="800"
+          height="800"
+          alt="Gato de Kin Felina"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero-badge">
+          <span class="hero-badge-icon" aria-hidden="true">↻</span>
+          <span>{page.heroImageAction}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ heroCatUrls, heroImageTitle: page.heroImageTitle }}>
+  (function () {
+    if (!heroCatUrls || heroCatUrls.length < 2) return;
+    try {
+      var prev = sessionStorage.getItem('kf_hero_cat_idx');
+      var prevIdx = prev !== null ? parseInt(prev, 10) : -1;
+      var newIdx = Math.floor(Math.random() * heroCatUrls.length);
+      if (newIdx === prevIdx) {
+        newIdx = (newIdx + 1) % heroCatUrls.length;
+      }
+      sessionStorage.setItem('kf_hero_cat_idx', String(newIdx));
+      var img = document.getElementById('hero-cat-image');
+      if (img && heroCatUrls[newIdx]) {
+        img.src = heroCatUrls[newIdx];
+      }
+    } catch (e) {}
+
+    // Allow user to click to see another cat with a smooth fade
+    var card = document.getElementById('hero-cat-card');
+    if (card) {
+      card.style.cursor = 'pointer';
+      card.setAttribute('title', heroImageTitle);
+      card.addEventListener('click', function () {
+        var currentIdx = parseInt(sessionStorage.getItem('kf_hero_cat_idx') || '0', 10);
+        var nextIdx = (currentIdx + 1) % heroCatUrls.length;
+        sessionStorage.setItem('kf_hero_cat_idx', String(nextIdx));
+        var img = document.getElementById('hero-cat-image');
+        if (img) {
+          img.style.opacity = '0.3';
+          var temp = new Image();
+          temp.onload = function () {
+            img.src = heroCatUrls[nextIdx];
+            img.style.opacity = '1';
+          };
+          temp.src = heroCatUrls[nextIdx];
+        }
+      });
+    }
+  })();
+</script>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">{page.overviewEyebrow}</div>
+      <h2>{page.overviewTitle}</h2>
+      <p>{page.overviewText}</p>
+    </div>
+    <div class="cards home-routes">
+      {locale.navigation.map((item) => (
+        <a class="card route-card" href={getLocalizedPath(language, item.id)}>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+          <h3>{item.label}</h3>
+          <span class="route-label">{routeLabels[item.id]}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="content-section home-instagram">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Instagram</div>
+      <h2>{page.instagramTitle}</h2>
+      <p>{page.instagramText}</p>
+    </div>
+    <div class="sk-instagram-feed" data-embed-id="25717654"></div>
+    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+  </div>
+</section>

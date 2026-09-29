@@ -1,0 +1,44 @@
+---
+import logo from '../assets/logo-kin-felina.jpeg';
+import { languages, locales } from '../i18n/index.js';
+import { getLocalizedPath } from '../i18n/routes.js';
+
+const { language, pageId } = Astro.props;
+const locale = locales[language];
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href={getLocalizedPath(language, 'home')} aria-label={locale.brandLabel}>
+      <img class="brand-logo" src={logo.src} alt="Kin Felina" width="58" height="54" />
+    </a>
+    <nav class="navlinks" aria-label={locale.navigationLabel}>
+      {locale.navigation.map((item) => <a href={getLocalizedPath(language, item.id)} aria-current={pageId === item.id ? 'page' : undefined}>{item.label}</a>)}
+    </nav>
+    <div class="header-tools">
+      <nav class="language-switch desktop-language" aria-label={locale.languageLabel}>
+        {languages.map((item) => (
+          <a href={getLocalizedPath(item, pageId)} lang={locales[item].locale} data-language={item} aria-current={language === item ? 'page' : undefined}>
+            {item.toUpperCase()}
+          </a>
+        ))}
+      </nav>
+      <details class="mobile-menu">
+        <summary aria-label={locale.menuLabel}>
+          <span class="menu-icon" aria-hidden="true"></span>
+        </summary>
+        <nav aria-label={locale.navigationLabel}>
+          {locale.navigation.map((item) => <a href={getLocalizedPath(language, item.id)}>{item.label}</a>)}
+          <span class="mobile-menu-divider" aria-hidden="true"></span>
+          <div class="language-switch mobile-language" role="group" aria-label={locale.languageLabel}>
+            {languages.map((item) => (
+              <a href={getLocalizedPath(item, pageId)} lang={locales[item].locale} data-language={item} aria-current={language === item ? 'page' : undefined}>
+                {item.toUpperCase()}
+              </a>
+            ))}
+          </div>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

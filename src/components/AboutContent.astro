@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import catAbout1 from '../assets/img/gatos/DSC04607_edited.jpg';
+import catAbout2 from '../assets/img/gatos/DSC04947_edited.jpg';
+
+const { page } = Astro.props;
+---
+
+<section class="content-section">
+  <div class="wrap cards">
+    {page.values.map((value) => (
+      <article class="card">
+        <div class="icon" aria-hidden="true">{value.emoji}</div>
+        <h2>{value.title}</h2>
+        <p>{value.text}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="content-section about-photos">
+  <div class="wrap about-photos-grid">
+    <div class="about-photo-card">
+      <Image
+        src={catAbout1}
+        alt="Gatos comunitarios en Sorbas"
+        class="about-img"
+        width={720}
+        height={480}
+        format="webp"
+        quality={82}
+      />
+    </div>
+    <div class="about-photo-card">
+      <Image
+        src={catAbout2}
+        alt="Seguimiento y bienestar animal"
+        class="about-img"
+        width={720}
+        height={480}
+        format="webp"
+        quality={82}
+      />
+    </div>
+  </div>
+</section>
+
+<section class="content-section about-story">
+  <div class="wrap split">
+    <div>
+      <h2>{page.storyTitle}</h2>
+      <p>{page.storyText}</p>
+    </div>
+    <div>
+      <h2>{page.territoryTitle}</h2>
+      <p>{page.territoryText}</p>
+      <div class="stats about-stats">
+        {page.territoryFacts.map((fact) => (
+          <div class="stat">
+            <strong>{fact.value}</strong>
+            <span>{fact.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band about-network">
+  <div class="wrap section-head">
+    <div class="kicker">KIN FELINA</div>
+    <h2>{page.networkTitle}</h2>
+    <p>{page.networkText}</p>
+  </div>
+</section>
