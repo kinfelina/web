@@ -1,0 +1,19 @@
+---
+import { getLocalizedPath } from '../i18n/routes.js';
+
+const { language, page } = Astro.props;
+---
+
+<section class="content-section">
+  <div class="wrap adoption-callout">
+    <p>{page.callout}</p>
+    <a class="btn btn-primary" href={getLocalizedPath(language, 'contact')}>{page.action}</a>
+  </div>
+</section>
+
+<section class="content-section adoption-feed">
+  <div class="wrap">
+    <div class="sk-instagram-feed" data-embed-id="25717654"></div>
+    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+  </div>
+</section>

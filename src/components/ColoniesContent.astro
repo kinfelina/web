@@ -1,0 +1,36 @@
+---
+const { page } = Astro.props;
+---
+
+<section class="content-section">
+  <div class="wrap split colony-layout">
+    <ul class="checklist">
+      {page.points.map((point) => (
+        <li><span class="check" aria-hidden="true">✓</span><span><strong>{point.title}</strong><br />{point.text}</span></li>
+      ))}
+    </ul>
+    <div class="photo colony-note">
+      <div class="quote"><p>{page.methodTitle}</p><small>{page.methodText}</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section colony-context">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">{page.contextTitle}</div>
+      <h2>{page.contextTitle}</h2>
+      <p>{page.contextText}</p>
+    </div>
+    <div class="cards colony-program-grid">
+      <article class="card">
+        <h2>{page.programTitle}</h2>
+        <p>{page.programText}</p>
+      </article>
+      <article class="card">
+        <h2>{page.logisticsTitle}</h2>
+        <p>{page.logisticsText}</p>
+      </article>
+    </div>
+  </div>
+</section>

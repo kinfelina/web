@@ -1,0 +1,65 @@
+---
+import logo from '../assets/logo-kin-felina.jpeg';
+import { getLocalizedPath } from '../i18n/routes.js';
+
+const { language, locale, page } = Astro.props;
+const routeLabels = {
+  about: page.aboutRouteLabel,
+  philosophy: page.philosophyRouteLabel,
+  colonies: page.coloniesRouteLabel,
+  adoption: page.adoptionRouteLabel,
+  donations: page.donationsRouteLabel,
+  contact: page.contactRouteLabel
+};
+---
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">{page.eyebrow}</span>
+      <h1>{page.title}</h1>
+      <p class="lead">{page.intro}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={getLocalizedPath(language, 'donations')}>{page.primaryAction}</a>
+        <a class="btn btn-light" href={getLocalizedPath(language, 'about')}>{page.secondaryAction}</a>
+      </div>
+      <p class="hero-note">{page.signoff}</p>
+    </div>
+    <div class="hero-card">
+      <div class="poster poster-brand" aria-label={page.brandTagline}>
+        <img class="poster-logo" src={logo.src} alt="Kin Felina" width="420" height="391" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">{page.overviewEyebrow}</div>
+      <h2>{page.overviewTitle}</h2>
+      <p>{page.overviewText}</p>
+    </div>
+    <div class="cards home-routes">
+      {locale.navigation.map((item) => (
+        <a class="card route-card" href={getLocalizedPath(language, item.id)}>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+          <h3>{item.label}</h3>
+          <span class="route-label">{routeLabels[item.id]}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="content-section home-instagram">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Instagram</div>
+      <h2>{page.instagramTitle}</h2>
+      <p>{page.instagramText}</p>
+    </div>
+    <div class="sk-instagram-feed" data-embed-id="25717654"></div>
+    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+  </div>
+</section>

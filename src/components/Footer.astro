@@ -1,0 +1,14 @@
+---
+const { locale } = Astro.props;
+---
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-association">
+      <strong>{locale.footer.legalName}</strong>
+      <address>{locale.footer.address}</address>
+      <span>{locale.footer.taxId}</span>
+    </div>
+    <span>{locale.footer.signature}</span>
+  </div>
+</footer>

@@ -1,0 +1,26 @@
+---
+const { page } = Astro.props;
+---
+
+<section class="content-section">
+  <div class="wrap contact-page-grid">
+    <div class="contact-details">
+      <h2>{page.contactHeading}</h2>
+      <div class="social">
+        <a href="https://www.instagram.com/asoc.kinfelina/" aria-label="Instagram">@asoc.kinfelina</a>
+        <a href={`mailto:${page.email}`}>✉ {page.email}</a>
+      </div>
+    </div>
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto" />
+      <p hidden><label>{page.honeypotLabel} <input name="bot-field" /></label></p>
+      <label for="contact-name">{page.nameLabel}</label>
+      <input id="contact-name" name="name" placeholder={page.namePlaceholder} autocomplete="name" required />
+      <label for="contact-email">{page.emailLabel}</label>
+      <input id="contact-email" name="email" type="email" placeholder={page.emailPlaceholder} autocomplete="email" required />
+      <label for="contact-message">{page.messageLabel}</label>
+      <textarea id="contact-message" name="message" placeholder={page.messagePlaceholder} required></textarea>
+      <button class="btn btn-primary" type="submit">{page.submit}</button>
+    </form>
+  </div>
+</section>

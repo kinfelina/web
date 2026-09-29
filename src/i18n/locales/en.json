@@ -1,0 +1,154 @@
+{
+  "locale": "en-GB",
+  "languageName": "English",
+  "navigation": [
+    { "id": "about", "label": "About us", "slug": "about-us" },
+    { "id": "philosophy", "label": "The KIN idea", "slug": "the-kin-idea" },
+    { "id": "colonies", "label": "Cat colonies", "slug": "colonies" },
+    { "id": "adoption", "label": "Adoption", "slug": "adoption" },
+    { "id": "donations", "label": "Donate", "slug": "donations" },
+    { "id": "contact", "label": "Contact", "slug": "contact" }
+  ],
+  "languageLabel": "Language",
+  "navigationLabel": "Main navigation",
+  "menuLabel": "Menu",
+  "brandLabel": "Kin Felina, home",
+  "footer": {
+    "legalName": "ASOCIACIÓN KIN FELINA - GESTIÓN ÉTICA DE COLONIAS FELINAS",
+    "address": "Barriada de Moras nº7, Sorbas (Almería), Spain, postcode 04279",
+    "taxId": "Spanish tax ID: G88844782",
+    "signature": "© 2026 Kin Felina · Made with 🐾 and deep respect"
+  },
+  "pages": {
+    "home": {
+      "title": "A connection between all living beings.",
+      "description": "We care for and protect community cats in Sorbas through ethical, responsible colony management.",
+      "eyebrow": "Cat welfare association · Sorbas",
+      "intro": "We care for and protect community cats, working to improve their welfare through ethical, responsible colony management.",
+      "primaryAction": "💚 How to help",
+      "secondaryAction": "Discover our work →",
+      "signoff": "Help · Care · Respect · Coexist",
+      "brandTagline": "A connection between all living beings",
+      "overviewEyebrow": "What we do",
+      "overviewTitle": "A community of people protecting lives.",
+      "overviewText": "Learn how we work and discover the different ways to support Sorbas community cats.",
+      "aboutRouteLabel": "Our story and commitment",
+      "philosophyRouteLabel": "The view that guides our care",
+      "coloniesRouteLabel": "Ethical work on the ground",
+      "adoptionRouteLabel": "Find a new companion",
+      "donationsRouteLabel": "Support the association's work",
+      "contactRouteLabel": "Join our network",
+      "instagramTitle": "We are also on Instagram",
+      "instagramText": "Follow our day-to-day work and stay close to Kin Felina."
+    },
+    "about": {
+      "title": "A community of people protecting lives.",
+      "description": "Meet Kin Felina and learn about our commitment to animal welfare and community life in Sorbas.",
+      "eyebrow": "About us",
+      "intro": "Kin Felina was founded to support community cats and the people who live alongside them. Our work is grounded in respect, prevention and responsibility.",
+      "values": [
+        { "title": "Animal welfare", "text": "Food, care, shelter and ongoing support for the cats in our colonies." },
+        { "title": "Ethical management", "text": "We promote responsible, sustainable action to help people and cats live well together." },
+        { "title": "Community", "text": "We work with local residents and volunteers to build lasting solutions." }
+      ],
+      "storyTitle": "Work that was already underway",
+      "storyText": "Kin Felina's work began on the ground in 2023, alongside the implementation of Law 7/2023. The first actions took place in Los Molinos and several parts of Sorbas town, then expanded to Moras and other communities across the municipality. The association was formally established on 1 April 2026 to give continuity, structure and coordination capacity to that voluntary work.",
+      "territoryTitle": "A territory that needs a network",
+      "territoryText": "Sorbas covers approximately 249 km², has fewer than 3,000 inhabitants and includes around forty villages, hamlets, cortijadas and dispersed settlements. Long distances, an ageing population and limited specialist services require a model adapted to rural life.",
+      "territoryFacts": [
+        { "value": "249 km²", "label": "municipal area" },
+        { "value": "< 3,000", "label": "inhabitants" },
+        { "value": "~ 40", "label": "villages and settlements" }
+      ],
+      "networkTitle": "Connecting what already exists",
+      "networkText": "Kin Felina aims to connect residents, carers, volunteers, veterinary professionals, collaborating property owners and public administrations. The goal is to progressively map, census and monitor colonies across the whole municipality."
+    },
+    "philosophy": {
+      "title": "Belonging to a shared world.",
+      "description": "The KIN idea: a reflection on belonging, care and the relationships between all living beings.",
+      "eyebrow": "The KIN idea",
+      "intro": "KIN FELINA begins with cats and with the people who care for them. But KIN expresses something broader: care begins when we recognise that we are connected.",
+      "sections": [
+        {
+          "title": "How far does our sense of belonging extend?",
+          "text": "Kin is a simple English word. It speaks of close relations, of those we consider part of our circle. At KIN FELINA, the idea goes beyond family or biological relatedness. It invites us to ask who shares our world and what connects us to other living beings.",
+          "aside": "Life is never entirely isolated. We care, depend, share and are transformed by what we are connected to."
+        },
+        {
+          "title": "From family to relationship",
+          "text": "Marshall Sahlins described kinship as a mutuality of being: a form of belonging in which we participate in one another's existence. What happens to one person can deeply affect another. This idea also helps us understand the relationship between people, cats, territory and community.",
+          "aside": "Belonging is not only about sharing an origin. It is also about participating in one another's lives."
+        },
+        {
+          "title": "A multispecies perspective",
+          "text": "A multispecies perspective questions the assumption that human beings inhabit a world separate from the rest of life. It does not erase differences between species or claim that all beings are the same. It asks us to notice the worlds we create together and the relationships on which we depend.",
+          "aside": "Interdependence · care · coexistence · reciprocity · belonging · responsibility"
+        }
+      ],
+      "closingTitle": "Building a network",
+      "closingText": "This is why KIN FELINA is not simply a structure that acts upon animals. It is a way of connecting people who are currently working in isolation, recognising those who are already caring and creating collaboration where there has been fragmentation.",
+      "question": "Who are we willing to recognise as part of our shared world?",
+      "referencesTitle": "Foundational references",
+      "references": [
+        "Lévi-Strauss, Claude (1964), Totemism.",
+        "Sahlins, Marshall (2013), What Kinship Is—and Is Not.",
+        "Strang, Veronica (2023), Living kindness: Re-imagining kinship for a more humane future.",
+        "Nathan, Vetri (2026), Our Multispecies Futures: Control, Care and Kinship in a Transformed World."
+      ]
+    },
+    "colonies": {
+      "title": "Colony management is care.",
+      "description": "How we support the welfare of community cats in Sorbas.",
+      "eyebrow": "Community cat colonies",
+      "intro": "Our aim is to reduce suffering, manage reproduction and support a balanced relationship between cats and their neighbours.",
+      "points": [
+        { "title": "Identification and monitoring", "text": "Getting to know each cat and keeping track of their wellbeing." },
+        { "title": "Neutering", "text": "Preventing litters and supporting better welfare." },
+        { "title": "Veterinary care", "text": "Responding to illness, injury and emergencies." },
+        { "title": "Living together", "text": "Sharing information and keeping an open dialogue with the community." }
+      ],
+      "methodTitle": "Help · Care · Respect · Coexist",
+      "methodText": "The Kin Felina motto",
+      "contextTitle": "Managing colonies across a dispersed municipality",
+      "contextText": "In Sorbas, colonies are spread across the town and numerous villages and hamlets. Ethical management requires more than neutering: it also means identifying animals, monitoring their condition, coordinating carers, ensuring veterinary support and keeping basic records of each intervention.",
+      "programTitle": "Collaboration that strengthens existing resources",
+      "programText": "Sorbas Town Council began preparing its Municipal Community Cat Colony Management Programme in 2024 and started implementing CER actions at the end of 2025. Kin Felina welcomes this progress and works to strengthen the areas that need continuity: health monitoring, feeding, logistics, coordination and support for the people already caring for colonies.",
+      "logisticsTitle": "Logistical support on the ground",
+      "logisticsText": "The association has access to a plot and a small storage space next to one of the main colonies in Moras. It is not intended as a shelter, but as support infrastructure for storing food and handling equipment, organising carriers and recovery cages, and enabling short-term veterinary recovery."
+    },
+    "adoption": {
+      "title": "Looking for a companion?",
+      "description": "Find out about responsible adoptions through Kin Felina.",
+      "eyebrow": "Adoption",
+      "intro": "A family can change everything. Get in touch to meet the cats looking for a home and learn about our adoption process.",
+      "callout": "Every story deserves a safe, loving place to call home.",
+      "action": "Ask about adoption"
+    },
+    "donations": {
+      "title": "Every contribution becomes care.",
+      "description": "Support Kin Felina and help care for community cats in Sorbas.",
+      "eyebrow": "Donations",
+      "intro": "Your support helps us care for Sorbas community cats and improve their welfare. Thank you for being part of it.",
+      "payments": [
+        { "label": "Cajamar bank transfer", "title": "Bank account", "value": "ES80 3058 0048 1627 2001 8220" },
+        { "label": "Bizum", "title": "Donations", "value": "672 572 615" }
+      ]
+    },
+    "contact": {
+      "title": "Would you like to get involved?",
+      "description": "Contact Kin Felina to volunteer, adopt or find out more.",
+      "eyebrow": "Contact",
+      "intro": "Volunteering, adoption, fostering, donations or colony support: we would love to hear from you.",
+      "contactHeading": "Get in touch",
+      "honeypotLabel": "Do not fill out this field:",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "Your email address",
+      "messageLabel": "Message",
+      "messagePlaceholder": "How can we help?",
+      "submit": "Send message",
+      "email": "asoc.kinfelina@gmail.com"
+    }
+  }
+}
