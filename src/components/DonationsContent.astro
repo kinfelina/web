@@ -5,8 +5,8 @@ import donationCat from '../assets/img/gatos/DSC02779_edited.jpg';
 const { page } = Astro.props;
 ---
 
-<section class="content-section">
-  <div class="wrap donations-layout">    
+<section class="content-section donations-overview">
+  <div class="wrap donations-layout">
     <div class="donation">
       <div class="donation-grid">
         {page.payments.map((payment) => (
@@ -16,6 +16,12 @@ const { page } = Astro.props;
             <code>{payment.value}</code>
           </div>
         ))}
+        <article class="pay pay-pickup">
+          <small>{page.pickupTitle}</small>
+          <strong>{page.pickupName}</strong>
+          <address>{page.pickupAddress}</address>
+          <p>{page.pickupText}</p>
+        </article>
       </div>
     </div>
     <div class="donation-photo-card">
@@ -23,8 +29,8 @@ const { page } = Astro.props;
         src={donationCat}
         alt="Tu aportación ayuda al bienestar de los gatos comunitarios"
         class="donation-img"
-        width={720}
-        height={500}
+        width={2000}
+        height={1333}
         format="webp"
         quality={82}
       />

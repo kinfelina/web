@@ -130,7 +130,12 @@ const heroCatUrls = heroCats.map((c) => c.src);
       <h2>{page.instagramTitle}</h2>
       <p>{page.instagramText}</p>
     </div>
-    <div class="sk-instagram-feed" data-embed-id="25717654"></div>
-    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+    <div class="instagram-feed-shell">
+      <div class="sk-instagram-feed" data-embed-id="25717654"></div>
+      <div class="instagram-consent-placeholder" id="instagram-consent-placeholder" hidden>
+        <p>{language === 'en' ? 'The Instagram feed is not loaded until you allow optional content.' : 'El feed de Instagram no se carga hasta que permitas el contenido opcional.'}</p>
+        <button type="button" class="open-cookie-settings">{language === 'en' ? 'Review privacy choices' : 'Revisar preferencias de privacidad'}</button>
+      </div>
+    </div>
   </div>
 </section>

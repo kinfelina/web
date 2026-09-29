@@ -2,7 +2,7 @@
   "locale": "es-ES",
   "languageName": "Español",
   "navigation": [
-    { "id": "about", "label": "Nosotros", "slug": "quienes-somos" },
+    { "id": "about", "label": "La asociación", "slug": "quienes-somos" },
     { "id": "philosophy", "label": "La idea KIN", "slug": "la-idea-kin" },
     { "id": "colonies", "label": "Colonias", "slug": "colonias" },
     { "id": "donations", "label": "Donar", "slug": "donaciones" },
@@ -19,13 +19,19 @@
     "signature": "© 2026 Kin Felina · Hecho con 🐾 y mucho respeto"
   },
   "pages": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "La página que buscas no está disponible.",
+      "eyebrow": "Error 404",
+      "intro": "Parece que esta página se ha escapado de la colonia. La dirección puede haber cambiado o ya no existir."
+    },
     "home": {
-      "title": "La conexión entre todos los seres vivos.",
-      "description": "Cuidamos, protegemos y mejoramos el bienestar de los gatos comunitarios de Sorbas con una gestión ética y responsable.",
+      "title": "Asociación Kin Felina · Gestión ética de colonias felinas",
+      "description": "Cuidamos y protegemos a los gatos comunitarios de Sorbas mediante una gestión ética y responsable de sus colonias.",
       "eyebrow": "Asociación felina · Sorbas",
-      "intro": "Cuidamos, protegemos y mejoramos el bienestar de los gatos comunitarios, impulsando una gestión ética y responsable de las colonias felinas.",
+      "intro": "Cuidamos y protegemos a los gatos comunitarios de Sorbas mediante una gestión ética y responsable de sus colonias.",
       "primaryAction": "💚 Quiero ayudar",
-      "secondaryAction": "Conoce el proyecto →",
+      "secondaryAction": "Conoce la asociación →",
       "signoff": "Ayuda · Cuida · Respeta · Convive",
       "brandTagline": "La conexión entre todos los seres vivos",
       "overviewEyebrow": "Nuestro trabajo",
@@ -33,7 +39,7 @@
       "overviewText": "Conoce cómo trabajamos y descubre las distintas formas de colaborar con los gatos comunitarios de Sorbas.",
       "heroImageAction": "¡Miau!",
       "heroImageTitle": "Haz clic para ver otro michi 🐾",
-      "aboutRouteLabel": "Nuestra historia y compromiso",
+      "aboutRouteLabel": "La asociación y su labor",
       "philosophyRouteLabel": "La mirada que guía nuestro cuidado",
       "coloniesRouteLabel": "Gestión ética sobre el terreno",
       "donationsRouteLabel": "Apoya el trabajo de la asociación",
@@ -42,12 +48,12 @@
       "instagramText": "Descubre nuestro día a día y acompaña el trabajo de Kin Felina."
     },
     "about": {
-      "title": "Una red de personas para proteger vidas.",
-      "description": "Conoce Kin Felina y nuestro compromiso con el bienestar animal y la convivencia en Sorbas.",
-      "eyebrow": "Quiénes somos",
+      "title": "La asociación",
+      "description": "Conoce la Asociación Kin Felina y su labor de gestión ética de colonias felinas en Sorbas.",
+      "eyebrow": "La asociación",
       "intro": "Kin Felina nace para acompañar a los gatos comunitarios y a las personas que conviven con ellos. Trabajamos desde el respeto, la prevención y la responsabilidad.",
       "values": [
-        { "emoji": "🐾", "title": "Bienestar animal", "text": "Alimentación, atención, refugio y seguimiento de los gatos de nuestras colonias." },
+        { "emoji": "🐾", "title": "Bienestar animal", "text": "Alimentación, atención, seguimiento y coordinación veterinaria para los gatos de nuestras colonias." },
         { "emoji": "⚖️", "title": "Gestión ética", "text": "Promovemos actuaciones responsables y sostenibles para mejorar la convivencia." },
         { "emoji": "🤝", "title": "Comunidad", "text": "Colaboramos con vecinos y voluntariado para construir soluciones duraderas." }
       ],
@@ -114,7 +120,7 @@
       "programTitle": "Una colaboración que complementa recursos",
       "programText": "El Ayuntamiento de Sorbas inició en 2024 la elaboración de su Programa Municipal de Gestión de Colonias Felinas y comenzó a ejecutar actuaciones CER a finales de 2025. Kin Felina valora ese avance y trabaja para reforzar los ámbitos que necesitan continuidad: seguimiento sanitario, alimentación, logística, coordinación y apoyo a las personas que ya cuidan de las colonias.",
       "logisticsTitle": "Apoyo logístico sobre el terreno",
-      "logisticsText": "La asociación dispone de una parcela y un pequeño espacio de almacenamiento junto a una de las principales colonias de Moras. No se plantea como refugio, sino como infraestructura de apoyo para conservar alimento y material de manejo, organizar transportines y jaulas de recuperación y facilitar actuaciones veterinarias temporales."
+      "logisticsText": "La asociación dispone de una parcela y un pequeño espacio de almacenamiento junto a una de las principales colonias de Moras. Allí organiza alimento, material de manejo, transportines y jaulas de recuperación, y coordina actuaciones veterinarias temporales."
     },
     "donations": {
       "title": "Cada aportación se convierte en cuidado.",
@@ -132,14 +138,72 @@
       "payments": [
         { "label": "Transferencia Cajamar", "title": "Cuenta bancaria", "value": "ES80 3058 0048 1627 2001 8220" },
         { "label": "Bizum", "title": "Donaciones", "value": "672 572 615" }
-      ]
+      ],
+      "pickupTitle": "Donación presencial",
+      "pickupName": "Consulta Veterinaria Sorbas",
+      "pickupAddress": "C/ Agüero Rull, 1, 04270 Sorbas, Almería",
+      "pickupText": "Puedes dejar donaciones económicas o comida. Consulta directamente con la clínica su horario de recepción."
+    },
+    "legalNotice": {
+      "title": "Aviso legal",
+      "description": "Datos de identificación y condiciones de uso del sitio web de la Asociación Kin Felina.",
+      "eyebrow": "Información legal",
+      "intro": "Identificación de la entidad responsable de este sitio web y condiciones generales de uso."
+    },
+    "privacy": {
+      "title": "Privacidad y protección de datos",
+      "description": "Información sobre el tratamiento de datos personales al contactar con la Asociación Kin Felina.",
+      "eyebrow": "Privacidad",
+      "intro": "Cómo usamos y protegemos los datos que nos facilitas a través del formulario de contacto."
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "description": "Información sobre cookies y almacenamiento local utilizados en la web de Kin Felina.",
+      "eyebrow": "Cookies",
+      "intro": "Qué almacenamiento utiliza este sitio y cómo configurar el contenido opcional de terceros."
+    },
+    "legal": {
+      "title": "Información legal y privacidad",
+      "description": "Información legal de la Asociación Kin Felina y detalles sobre privacidad y cookies de este sitio web.",
+      "eyebrow": "Información legal",
+      "intro": "Información sobre quién gestiona este sitio web, cómo se tratan los datos personales y qué almacenamiento utiliza.",
+      "noticeTitle": "Aviso legal",
+      "ownerLabel": "Titular",
+      "addressLabel": "Domicilio",
+      "taxIdLabel": "NIF",
+      "nationalRegistryLabel": "Registro Nacional de Asociaciones",
+      "nationalRegistry": "Sección 1ª / Número Nacional: 633307",
+      "emailLabel": "Contacto",
+      "noticeText": "Este sitio ofrece información sobre las actividades de la asociación. Quien lo utilice debe hacerlo conforme a la legislación aplicable y respetando los derechos de terceros. Los enlaces externos llevan a sitios gestionados por sus respectivos titulares.",
+      "privacyTitle": "Privacidad",
+      "controllerTitle": "Responsable del tratamiento",
+      "controllerText": "Asociación Kin Felina - Gestión Ética de Colonias Felinas. Para consultas sobre privacidad: asoc.kinfelina@gmail.com.",
+      "contactDataTitle": "Mensajes de contacto",
+      "contactDataText": "Si nos escribes mediante el formulario, trataremos tu nombre, correo electrónico y mensaje para responder y gestionar tu consulta. Facilitar esos datos es voluntario, aunque sin ellos quizá no podamos responder.",
+      "basisTitle": "Base y destinatarios",
+      "basisText": "La base es atender tu solicitud y las actuaciones precontractuales que pidas. El formulario lo presta Netlify Forms, que procesa y almacena los envíos por cuenta de la asociación y remite un aviso al correo de contacto. Netlify puede tratar datos desde otros países conforme a sus condiciones y salvaguardas de transferencia; consulta su política de privacidad para más información.",
+      "recipientsTitle": "Servicios externos",
+      "recipientsText": "No vendemos los datos del formulario. Netlify los recibe para operar el formulario. El feed de Instagram de SociableKIT es opcional y solo se carga tras aceptar; sus datos y tecnologías se describen en el apartado de cookies.",
+      "retentionTitle": "Conservación",
+      "retentionText": "Los mensajes se conservan en Netlify Forms y en el correo de la asociación mientras sean necesarios para responder y dar seguimiento, y después se eliminan cuando ya no sean necesarios, salvo conservación por obligaciones legales o para atender reclamaciones. La asociación debe revisar y borrar periódicamente los envíos ya cerrados.",
+      "rightsTitle": "Tus derechos",
+      "rightsText": "Puedes solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a asoc.kinfelina@gmail.com. También puedes reclamar ante la Agencia Española de Protección de Datos:",
+      "cookiesTitle": "Cookies y almacenamiento local",
+      "cookiesIntro": "Este sitio no incorpora herramientas propias de publicidad ni analítica. Usa almacenamiento del navegador para recordar preferencias y, si lo autorizas, puede cargar un servicio externo.",
+      "languageStorage": "Preferencia de idioma (kinfelina-language, localStorage): recuerda el idioma elegido; se conserva hasta que la borres desde el navegador.",
+      "consentStorage": "Preferencia de cookies (kinfelina-cookie-consent-v1, localStorage): guarda tu decisión durante 180 días para respetarla en visitas posteriores.",
+      "widgetStorage": "Feed opcional de Instagram (SociableKIT): solo se carga tras aceptar. El script puede usar sessionStorage (unique_id), leer la cookie _ga si ya existe y enviar identificadores, la página visitada y datos de visualización a sus servidores. También solicita recursos a sus propios dominios y proveedores externos.",
+      "cookiesControl": "Puedes cambiar tu elección en cualquier momento con el control de abajo o desde el enlace de preferencias al pie de página",
+      "openSettings": "Abrir preferencias de cookies",
+      "widgetProvider": "Al aceptar el feed, se aplican también las prácticas de privacidad del proveedor"
     },
     "contact": {
       "title": "¿Quieres formar parte?",
       "description": "Contacta con Kin Felina para colaborar o recibir información.",
       "eyebrow": "Contacto",
-      "intro": "Voluntariado, acogidas, donaciones o colaboración con las colonias: escríbenos.",
+      "intro": "¿Quieres colaborar, donar o conocer cómo trabajamos con las colonias felinas? Escríbenos.",
       "contactHeading": "Escríbenos",
+      "serviceNotice": "Kin Felina no dispone de un punto de atención presencial ni recibe animales. Nuestra labor se centra en la gestión y el seguimiento de colonias y en la coordinación de atención veterinaria.",
       "honeypotLabel": "No rellenes este campo:",
       "nameLabel": "Nombre",
       "namePlaceholder": "Tu nombre",
@@ -148,6 +212,8 @@
       "messageLabel": "Mensaje",
       "messagePlaceholder": "¿En qué podemos ayudarte?",
       "submit": "Enviar mensaje",
+      "privacyNotice": "Usaremos tus datos para responder a tu consulta. El formulario se procesa mediante Netlify Forms. Puedes ejercer tus derechos escribiendo a asoc.kinfelina@gmail.com. Consulta la información completa de privacidad.",
+      "privacyLink": "Información legal y privacidad",
       "email": "asoc.kinfelina@gmail.com"
     }
   }

@@ -4,3 +4,13 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/404/"
+  status = 404
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

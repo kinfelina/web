@@ -1,11 +1,13 @@
 ---
-const { page } = Astro.props;
+const { page, language } = Astro.props;
+const privacyPath = language === 'en' ? '/en/privacy/' : '/privacidad/';
 ---
 
 <section class="content-section">
   <div class="wrap contact-page-grid">
     <div class="contact-details">
       <h2>{page.contactHeading}</h2>
+      <p class="contact-service-notice">{page.serviceNotice}</p>
       <div class="social">
         <a href="https://www.instagram.com/asoc.kinfelina/" aria-label="Instagram">@asoc.kinfelina</a>
         <a href={`mailto:${page.email}`}>✉ {page.email}</a>
@@ -20,6 +22,7 @@ const { page } = Astro.props;
       <input id="contact-email" name="email" type="email" placeholder={page.emailPlaceholder} autocomplete="email" required />
       <label for="contact-message">{page.messageLabel}</label>
       <textarea id="contact-message" name="message" placeholder={page.messagePlaceholder} required></textarea>
+      <p class="form-privacy-notice">{page.privacyNotice} <a href={privacyPath}>{page.privacyLink}</a>.</p>
       <button class="btn btn-primary" type="submit">{page.submit}</button>
     </form>
   </div>
