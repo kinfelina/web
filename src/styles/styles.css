@@ -213,12 +213,61 @@ h1 em {
   background: white
 }
 
+.hero-poster {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.hero-poster:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.poster-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+.hero-badge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  font-size: 22px;
+  line-height: 1;
+}
+
 section {
   padding: 92px 0
 }
 
 .section-head {
-  max-width: 700px;
+  max-width: 850px;
   margin-bottom: 42px
 }
 
@@ -357,6 +406,10 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.donation-impact-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .colony-program-grid .card h2 {
   margin-top: 0;
 }
@@ -409,9 +462,9 @@ h2 {
 
 .closing-grid {
   display: grid;
-  grid-template-columns: 1fr .8fr;
-  gap: 80px;
-  align-items: end
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 .closing-grid h2 {
@@ -518,6 +571,34 @@ blockquote {
   color: var(--muted)
 }
 
+.photo.has-image {
+  background: none;
+  border: 6px solid white;
+  box-shadow: var(--shadow);
+}
+
+.photo.has-image:before {
+  display: none;
+}
+
+.photo-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo.has-image .quote {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
 .donation {
   background: #eef2e8;
   border: 1px solid #d4ddc9;
@@ -527,9 +608,8 @@ blockquote {
 
 .donation-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 22px;
-  margin-top: 28px
 }
 
 .pay {
@@ -644,7 +724,8 @@ footer {
     grid-template-columns: 1fr
   }
 
-  .colony-program-grid {
+  .colony-program-grid,
+  .donation-impact-grid {
     grid-template-columns: 1fr;
   }
 
@@ -659,7 +740,7 @@ footer {
 
 @media(max-width:560px) {
   .wrap {
-    width: min(var(--max), calc(100% - 24px))
+    width: min(var(--max), calc(100% - 30px))
   }
 
   .nav-inner {
@@ -689,10 +770,12 @@ footer {
 }
 
 .brand-logo {
-  width: 110px;
-  height: 56px;
+  height: 54px;
+  width: auto;
+  aspect-ratio: 896 / 834;
   object-fit: contain;
-  border-radius: 12px;
+  display: block;
+  border-radius: 8px;
 }
 
 .brand:focus-visible,
@@ -886,23 +969,6 @@ button:focus-visible {
   min-height: 330px;
 }
 
-.adoption-callout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 34px;
-  background: #eef2e8;
-  border: 1px solid #d4ddc9;
-  border-radius: 8px;
-}
-
-.adoption-callout p {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: 24px;
-}
-
 .contact-page-grid {
   display: grid;
   grid-template-columns: .8fr 1.2fr;
@@ -964,6 +1030,11 @@ button:focus-visible {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  .about-photos-grid,
+  .donations-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
@@ -971,9 +1042,60 @@ button:focus-visible {
     padding: 54px 0 34px;
   }
 
-  .adoption-callout {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 24px;
-  }
+}
+
+/* Image gallery and photo cards */
+.about-photos {
+  padding-top: 0;
+  padding-bottom: 24px;
+}
+
+.about-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.about-photo-card {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 6px solid white;
+  aspect-ratio: 16 / 10;
+  background: #f0f3eb;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.about-photo-card:hover .about-img {
+  transform: scale(1.03);
+}
+
+.donations-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.donation-photo-card {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 6px solid white;
+  aspect-ratio: 4 / 3;
+  background: #f0f3eb;
+}
+
+.donation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import colonyCat from '../assets/img/gatos/DSC03391_edited.jpg';
+
 const { page } = Astro.props;
 ---
 
@@ -9,7 +12,16 @@ const { page } = Astro.props;
         <li><span class="check" aria-hidden="true">✓</span><span><strong>{point.title}</strong><br />{point.text}</span></li>
       ))}
     </ul>
-    <div class="photo colony-note">
+    <div class="photo colony-note has-image">
+      <Image
+        src={colonyCat}
+        alt="Gatos en colonia felina de Sorbas"
+        class="photo-bg-img"
+        width={900}
+        height={650}
+        format="webp"
+        quality={82}
+      />
       <div class="quote"><p>{page.methodTitle}</p><small>{page.methodText}</small></div>
     </div>
   </div>

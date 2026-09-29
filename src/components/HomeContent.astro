@@ -1,5 +1,5 @@
 ---
-import logo from '../assets/logo-kin-felina.jpeg';
+import { getImage } from 'astro:assets';
 import { getLocalizedPath } from '../i18n/routes.js';
 
 const { language, locale, page } = Astro.props;
@@ -7,10 +7,26 @@ const routeLabels = {
   about: page.aboutRouteLabel,
   philosophy: page.philosophyRouteLabel,
   colonies: page.coloniesRouteLabel,
-  adoption: page.adoptionRouteLabel,
   donations: page.donationsRouteLabel,
   contact: page.contactRouteLabel
 };
+
+const catImports = import.meta.glob('../assets/img/gatos/*.jpg', { eager: true });
+const rawCatImages = Object.values(catImports).map((mod) => mod.default);
+
+const heroCats = await Promise.all(
+  rawCatImages.map((img) =>
+    getImage({
+      src: img,
+      width: 800,
+      height: 800,
+      format: 'webp',
+      quality: 82
+    })
+  )
+);
+const defaultHeroImage = heroCats[0];
+const heroCatUrls = heroCats.map((c) => c.src);
 ---
 
 <section class="hero">
@@ -26,12 +42,67 @@ const routeLabels = {
       <p class="hero-note">{page.signoff}</p>
     </div>
     <div class="hero-card">
-      <div class="poster poster-brand" aria-label={page.brandTagline}>
-        <img class="poster-logo" src={logo.src} alt="Kin Felina" width="420" height="391" />
+      <div class="poster hero-poster" aria-label={page.brandTagline} id="hero-cat-card">
+        <img
+          id="hero-cat-image"
+          class="poster-cat-img"
+          src={defaultHeroImage.src}
+          width="800"
+          height="800"
+          alt="Gato de Kin Felina"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero-badge">
+          <span class="hero-badge-icon" aria-hidden="true">↻</span>
+          <span>{page.heroImageAction}</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline define:vars={{ heroCatUrls, heroImageTitle: page.heroImageTitle }}>
+  (function () {
+    if (!heroCatUrls || heroCatUrls.length < 2) return;
+    try {
+      var prev = sessionStorage.getItem('kf_hero_cat_idx');
+      var prevIdx = prev !== null ? parseInt(prev, 10) : -1;
+      var newIdx = Math.floor(Math.random() * heroCatUrls.length);
+      if (newIdx === prevIdx) {
+        newIdx = (newIdx + 1) % heroCatUrls.length;
+      }
+      sessionStorage.setItem('kf_hero_cat_idx', String(newIdx));
+      var img = document.getElementById('hero-cat-image');
+      if (img && heroCatUrls[newIdx]) {
+        img.src = heroCatUrls[newIdx];
+      }
+    } catch (e) {}
+
+    // Allow user to click to see another cat with a smooth fade
+    var card = document.getElementById('hero-cat-card');
+    if (card) {
+      card.style.cursor = 'pointer';
+      card.setAttribute('title', heroImageTitle);
+      card.addEventListener('click', function () {
+        var currentIdx = parseInt(sessionStorage.getItem('kf_hero_cat_idx') || '0', 10);
+        var nextIdx = (currentIdx + 1) % heroCatUrls.length;
+        sessionStorage.setItem('kf_hero_cat_idx', String(nextIdx));
+        var img = document.getElementById('hero-cat-image');
+        if (img) {
+          img.style.opacity = '0.3';
+          var temp = new Image();
+          temp.onload = function () {
+            img.src = heroCatUrls[nextIdx];
+            img.style.opacity = '1';
+          };
+          temp.src = heroCatUrls[nextIdx];
+        }
+      });
+    }
+  })();
+</script>
 
 <section>
   <div class="wrap">

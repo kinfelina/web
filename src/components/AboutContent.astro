@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import catAbout1 from '../assets/img/gatos/DSC04607_edited.jpg';
+import catAbout2 from '../assets/img/gatos/DSC04947_edited.jpg';
+
 const { page } = Astro.props;
 ---
 
@@ -6,11 +10,38 @@ const { page } = Astro.props;
   <div class="wrap cards">
     {page.values.map((value) => (
       <article class="card">
-        <div class="icon" aria-hidden="true">♡</div>
+        <div class="icon" aria-hidden="true">{value.emoji}</div>
         <h2>{value.title}</h2>
         <p>{value.text}</p>
       </article>
     ))}
+  </div>
+</section>
+
+<section class="content-section about-photos">
+  <div class="wrap about-photos-grid">
+    <div class="about-photo-card">
+      <Image
+        src={catAbout1}
+        alt="Gatos comunitarios en Sorbas"
+        class="about-img"
+        width={720}
+        height={480}
+        format="webp"
+        quality={82}
+      />
+    </div>
+    <div class="about-photo-card">
+      <Image
+        src={catAbout2}
+        alt="Seguimiento y bienestar animal"
+        class="about-img"
+        width={720}
+        height={480}
+        format="webp"
+        quality={82}
+      />
+    </div>
   </div>
 </section>
 
