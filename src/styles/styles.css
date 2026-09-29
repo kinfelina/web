@@ -753,7 +753,7 @@ footer {
 .legal-block p,
 .legal-block li,
 .legal-block dd { color: var(--muted); line-height: 1.7; }
-.legal-block dl { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 8px 20px; }
+.legal-block dl { display: grid; grid-template-columns: minmax(220px, 280px) 1fr; gap: 8px 20px; }
 .legal-block dt { font-weight: 700; }
 .legal-block dd { margin: 0; }
 
@@ -778,6 +778,10 @@ footer {
 .cookie-consent p { margin: 0 0 8px; color: var(--muted); line-height: 1.5; }
 .cookie-consent-actions { display: flex; flex-direction: column; justify-content: center; gap: 10px; }
 .cookie-consent-actions button { min-height: 42px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+.instagram-consent-placeholder { display: grid; justify-items: center; gap: 10px; padding: 28px 16px; border: 1px solid var(--line); border-radius: 12px; text-align: center; }
+.instagram-consent-placeholder[hidden] { display: none; }
+.instagram-consent-placeholder p { margin: 0; color: var(--muted); }
+.instagram-consent-placeholder button { border: 0; background: none; color: var(--accent, #617653); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
 
 @media (max-width: 640px) {
   .cookie-consent { right: 12px; bottom: 12px; width: calc(100vw - 24px); grid-template-columns: 1fr; gap: 12px; padding: 18px; }
@@ -1043,6 +1047,14 @@ button:focus-visible {
 
 .content-section {
   padding-top: 64px;
+}
+
+.donations-overview {
+  padding-bottom: 32px;
+}
+
+.donations-overview + .colony-context {
+  padding-top: 48px;
 }
 
 .not-found-section {

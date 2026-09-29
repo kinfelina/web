@@ -15,12 +15,12 @@ const english = language === 'en';
   </div>
 </aside>
 
-<script is:inline>
-  {`
-    (() => {
+<script>
+  (() => {
       const consentKey = 'kinfelina-cookie-consent-v1';
       const panel = document.getElementById('cookie-consent');
       const feed = document.querySelector('.sk-instagram-feed');
+      const placeholder = document.getElementById('instagram-consent-placeholder');
       let widgetLoaded = false;
 
       const getConsent = () => {
@@ -35,31 +35,42 @@ const english = language === 'en';
       const loadWidget = () => {
         if (!feed || widgetLoaded) return;
         widgetLoaded = true;
+        if (placeholder) placeholder.hidden = true;
         const script = document.createElement('script');
         script.src = 'https://widgets.sociablekit.com/instagram-feed/widget.js';
         script.defer = true;
+        script.onerror = () => {
+          widgetLoaded = false;
+          if (placeholder) placeholder.hidden = false;
+        };
         document.head.appendChild(script);
       };
 
-      const showPanel = () => { panel.hidden = false; };
+      const showPanel = () => { if (panel) panel.hidden = false; };
       const savedChoice = getConsent();
       if (savedChoice === 'accepted') loadWidget();
-      else if (feed && savedChoice !== 'rejected') showPanel();
+      else if (feed && savedChoice === 'rejected' && placeholder) placeholder.hidden = false;
+      else if (feed) showPanel();
 
       document.addEventListener('click', (event) => {
-        if (event.target.closest('.open-cookie-settings')) {
+        const target = event.target instanceof Element ? event.target : null;
+        if (target?.closest('.open-cookie-settings')) {
           event.preventDefault();
           showPanel();
           return;
         }
-        const button = event.target.closest('[data-cookie-choice]');
-        if (!button || !panel.contains(button)) return;
+        const button = target?.closest('[data-cookie-choice]');
+        if (!button || !panel?.contains(button)) return;
         const choice = button.dataset.cookieChoice === 'accept' ? 'accepted' : 'rejected';
-        localStorage.setItem(consentKey, JSON.stringify({ choice, expires: Date.now() + 180 * 24 * 60 * 60 * 1000 }));
+        try {
+          localStorage.setItem(consentKey, JSON.stringify({ choice, expires: Date.now() + 180 * 24 * 60 * 60 * 1000 }));
+        } catch { /* Continue for this visit if browser storage is unavailable. */ }
         panel.hidden = true;
         if (choice === 'accepted') loadWidget();
-        else if (widgetLoaded) window.location.reload();
+        else {
+          if (placeholder) placeholder.hidden = false;
+          if (widgetLoaded) window.location.reload();
+        }
       });
-    })();
-  `}
+  })();
 </script>
