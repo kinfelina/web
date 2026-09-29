@@ -1,8 +1,7 @@
 ---
-import favicon from '../assets/favicon.ico';
 import logo from '../assets/logo-kin-felina.jpeg';
-import ogImageEs from '../assets/kin-felina-og.png';
-import ogImageEn from '../assets/kin-felina-en-og.png';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/lora';
 import '../styles/styles.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -13,8 +12,8 @@ const { language, pageId } = Astro.props;
 const locale = locales[language];
 const page = locale.pages[pageId];
 const canonical = new URL(getLocalizedPath(language, pageId), Astro.site);
-const ogImage = language === 'en' ? ogImageEn : ogImageEs;
-const socialImage = new URL(ogImage.src, Astro.site).href;
+const socialImagePath = language === 'en' ? '/og/kin-felina-en-og.png' : '/og/kin-felina-og.png';
+const socialImage = new URL(socialImagePath, Astro.site).href;
 const alternates = languages.map((alternateLanguage) => ({
   language: locales[alternateLanguage].locale,
   href: new URL(getLocalizedPath(alternateLanguage, pageId), Astro.site)
@@ -73,7 +72,7 @@ const structuredData = {
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#617653" />
     <title>{page.title} · Kin Felina</title>
-    <link rel="icon" href={favicon} type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href={canonical} />
     {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.language} href={alternate.href} />)}
     <link rel="alternate" hreflang="x-default" href={new URL(getLocalizedPath('es', pageId), Astro.site)} />
@@ -85,8 +84,6 @@ const structuredData = {
     <meta property="og:locale" content={locale.locale.replace('-', '_')} />
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content={ogImage.width} />
-    <meta property="og:image:height" content={ogImage.height} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${page.title} · Kin Felina`} />
     <meta name="twitter:description" content={page.description} />
