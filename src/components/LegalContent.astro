@@ -1,0 +1,41 @@
+---
+const { language, page, pageMeta, kind } = Astro.props;
+const english = language === 'en';
+---
+
+<section class="content-section legal-page">
+  <div class="wrap">
+    <header class="section-head"><span class="eyebrow">{pageMeta.eyebrow}</span><h1>{pageMeta.title}</h1><p>{pageMeta.intro}</p></header>
+
+    {kind === 'legalNotice' && <section class="legal-block">
+      <dl>
+        <dt>{page.ownerLabel}</dt><dd>Asociación Kin Felina - Gestión Ética de Colonias Felinas</dd>
+        <dt>{page.addressLabel}</dt><dd>Barriada de Moras nº7, Sorbas (Almería), 04279, España</dd>
+        <dt>{page.taxIdLabel}</dt><dd>G88844782</dd>
+        <dt>{page.emailLabel}</dt><dd><a href="mailto:asoc.kinfelina@gmail.com">asoc.kinfelina@gmail.com</a></dd>
+        <dt>{page.taxRegistrationLabel}</dt><dd>{page.taxRegistration}</dd>
+      </dl>
+      <p>{page.noticeText}</p>
+    </section>}
+
+    {kind === 'privacy' && <section class="legal-block">
+      <h2>{page.controllerTitle}</h2><p>{page.controllerText}</p>
+      <h2>{page.contactDataTitle}</h2><p>{page.contactDataText}</p>
+      <h2>{page.basisTitle}</h2><p>{page.basisText} <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify privacy statement</a>.</p>
+      <h2>{page.recipientsTitle}</h2><p>{page.recipientsText}</p>
+      <h2>{page.retentionTitle}</h2><p>{page.retentionText} <a href="https://docs.netlify.com/manage/forms/submissions/" target="_blank" rel="noopener noreferrer">{english ? 'Netlify Forms submission management' : 'gestión de envíos de Netlify Forms'}</a>.</p>
+      <h2>{page.rightsTitle}</h2><p>{page.rightsText} <a href="https://www.aepd.es/">AEPD</a>.</p>
+    </section>}
+
+    {kind === 'cookies' && <section class="legal-block">
+      <p>{page.cookiesIntro}</p>
+      <ul>
+        <li>{page.languageStorage}</li>
+        <li>{page.consentStorage}</li>
+        <li>{page.widgetStorage}</li>
+      </ul>
+      <p>{page.cookiesControl} <button type="button" class="text-button open-cookie-settings">{page.openSettings}</button>.</p>
+      <p>{page.widgetProvider} <a href="https://www.sociablekit.com/privacy-policy/" target="_blank" rel="noopener noreferrer">SociableKIT</a>.</p>
+    </section>}
+  </div>
+</section>

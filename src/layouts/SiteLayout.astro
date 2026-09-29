@@ -5,12 +5,15 @@ import '@fontsource-variable/lora';
 import '../styles/styles.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import { languages, locales } from '../i18n/index.js';
 import { getLocalizedPath } from '../i18n/routes.js';
 
 const { language, pageId } = Astro.props;
 const locale = locales[language];
 const page = locale.pages[pageId];
+const headerPageId = pageId === 'notFound' ? 'home' : pageId;
+const pageTitle = pageId === 'home' || pageId === 'notFound' ? page.title : `${page.title} · Kin Felina`;
 const canonical = new URL(getLocalizedPath(language, pageId), Astro.site);
 const socialImagePath = language === 'en' ? '/og/kin-felina-en-og.jpg' : '/og/kin-felina-og.jpg';
 const socialImage = new URL(socialImagePath, Astro.site).href;
@@ -55,7 +58,7 @@ const structuredData = {
       '@type': 'WebPage',
       '@id': canonical.href,
       url: canonical.href,
-      name: `${page.title} · Kin Felina`,
+      name: pageTitle,
       description: page.description,
       isPartOf: { '@id': websiteUrl },
       about: { '@id': organizationUrl },
@@ -72,18 +75,18 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={page.description} />
     <meta name="author" content="Kin Felina" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={pageId === 'notFound' ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="theme-color" content="#617653" />
-    <title>{page.title} · Kin Felina</title>
+    <title>{pageTitle}</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href={canonical} />
-    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.language} href={alternate.href} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL(getLocalizedPath('es', pageId), Astro.site)} />
+    {pageId !== 'notFound' && <link rel="canonical" href={canonical} />}
+    {pageId !== 'notFound' && alternates.map((alternate) => <link rel="alternate" hreflang={alternate.language} href={alternate.href} />)}
+    {pageId !== 'notFound' && <link rel="alternate" hreflang="x-default" href={new URL(getLocalizedPath('es', pageId), Astro.site)} />}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kin Felina" />
-    <meta property="og:title" content={`${page.title} · Kin Felina`} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={page.description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={locale.locale.replace('-', '_')} />
@@ -93,7 +96,7 @@ const structuredData = {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={socialImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${page.title} · Kin Felina`} />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={page.description} />
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
@@ -101,11 +104,12 @@ const structuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
   <body>
-    <Header language={language} pageId={pageId} />
+    <Header language={language} pageId={headerPageId} />
     <main id="contenido">
       <slot />
     </main>
-    <Footer locale={locale} />
+    <Footer locale={locale} language={language} />
+    <CookieConsent language={language} />
     <script is:inline>
       {`
         (() => {

@@ -6,7 +6,7 @@ const { page } = Astro.props;
 ---
 
 <section class="content-section">
-  <div class="wrap donations-layout">    
+  <div class="wrap donations-layout">
     <div class="donation">
       <div class="donation-grid">
         {page.payments.map((payment) => (
@@ -16,6 +16,12 @@ const { page } = Astro.props;
             <code>{payment.value}</code>
           </div>
         ))}
+        <article class="pay pay-pickup">
+          <small>{page.pickupTitle}</small>
+          <strong>{page.pickupName}</strong>
+          <address>{page.pickupAddress}</address>
+          <p>{page.pickupText}</p>
+        </article>
       </div>
     </div>
     <div class="donation-photo-card">

@@ -1,14 +1,23 @@
 ---
-const { locale } = Astro.props;
+const { locale, language } = Astro.props;
+const legalNoticePath = language === 'en' ? '/en/legal-notice/' : '/aviso-legal/';
+const privacyPath = language === 'en' ? '/en/privacy/' : '/privacidad/';
+const cookiesPath = language === 'en' ? '/en/cookies/' : '/cookies/';
 ---
 
 <footer>
   <div class="wrap footer-inner">
     <div class="footer-association">
       <strong>{locale.footer.legalName}</strong>
-      <address>{locale.footer.address}</address>
-      <span>{locale.footer.taxId}</span>
     </div>
-    <span>{locale.footer.signature}</span>
+    <div class="footer-signature">
+      <span>{locale.footer.signature}</span>
+    </div>
+    <nav class="footer-legal" aria-label={language === 'en' ? 'Legal information' : 'Información legal'}>
+      <a href={legalNoticePath}>{language === 'en' ? 'Legal notice' : 'Aviso legal'}</a>
+      <a href={privacyPath}>{language === 'en' ? 'Privacy' : 'Privacidad'}</a>
+      <a href={cookiesPath}>{language === 'en' ? 'Cookies' : 'Cookies'}</a>
+      <button type="button" class="open-cookie-settings">{language === 'en' ? 'Cookie settings' : 'Preferencias de cookies'}</button>
+    </nav>
   </div>
 </footer>

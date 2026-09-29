@@ -1,0 +1,65 @@
+---
+const { language } = Astro.props;
+const english = language === 'en';
+---
+
+<aside class="cookie-consent" id="cookie-consent" role="dialog" aria-modal="false" aria-labelledby="cookie-consent-title" hidden>
+  <div class="cookie-consent-copy">
+    <h2 id="cookie-consent-title">{english ? 'Your privacy choices' : 'Tus preferencias de privacidad'}</h2>
+    <p>{english ? 'The optional Instagram feed is provided by SociableKIT. If enabled, it can store identifiers in your browser and send page and usage data to SociableKIT. Choose whether to load it.' : 'El feed opcional de Instagram lo ofrece SociableKIT. Al activarlo, puede guardar identificadores en el navegador y enviar a SociableKIT datos de uso y de la página. Elige si quieres cargarlo.'}</p>
+    <a href={english ? '/en/cookies/' : '/cookies/'}>{english ? 'Cookie information' : 'Información sobre cookies'}</a>
+  </div>
+  <div class="cookie-consent-actions">
+    <button type="button" data-cookie-choice="reject">{english ? 'Reject optional' : 'Rechazar opcionales'}</button>
+    <button type="button" data-cookie-choice="accept">{english ? 'Accept optional' : 'Aceptar opcionales'}</button>
+  </div>
+</aside>
+
+<script is:inline>
+  {`
+    (() => {
+      const consentKey = 'kinfelina-cookie-consent-v1';
+      const panel = document.getElementById('cookie-consent');
+      const feed = document.querySelector('.sk-instagram-feed');
+      let widgetLoaded = false;
+
+      const getConsent = () => {
+        try {
+          const saved = JSON.parse(localStorage.getItem(consentKey) || 'null');
+          if (saved && saved.expires > Date.now()) return saved.choice;
+          if (saved) localStorage.removeItem(consentKey);
+        } catch { /* Ignore invalid stored preferences. */ }
+        return null;
+      };
+
+      const loadWidget = () => {
+        if (!feed || widgetLoaded) return;
+        widgetLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://widgets.sociablekit.com/instagram-feed/widget.js';
+        script.defer = true;
+        document.head.appendChild(script);
+      };
+
+      const showPanel = () => { panel.hidden = false; };
+      const savedChoice = getConsent();
+      if (savedChoice === 'accepted') loadWidget();
+      else if (feed && savedChoice !== 'rejected') showPanel();
+
+      document.addEventListener('click', (event) => {
+        if (event.target.closest('.open-cookie-settings')) {
+          event.preventDefault();
+          showPanel();
+          return;
+        }
+        const button = event.target.closest('[data-cookie-choice]');
+        if (!button || !panel.contains(button)) return;
+        const choice = button.dataset.cookieChoice === 'accept' ? 'accepted' : 'rejected';
+        localStorage.setItem(consentKey, JSON.stringify({ choice, expires: Date.now() + 180 * 24 * 60 * 60 * 1000 }));
+        panel.hidden = true;
+        if (choice === 'accepted') loadWidget();
+        else if (widgetLoaded) window.location.reload();
+      });
+    })();
+  `}
+</script>
