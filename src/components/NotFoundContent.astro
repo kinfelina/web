@@ -1,7 +1,7 @@
 ---
 const { page, language = 'es' } = Astro.props;
 const homeHref = language === 'en' ? '/en/' : '/';
-const homeLabel = language === 'en' ? 'Go to the home page' : 'Volver al inicio';
+const homeLabel = page.homeLabel;
 ---
 
 <section class="not-found-section">

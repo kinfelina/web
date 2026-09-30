@@ -774,8 +774,9 @@ footer {
   box-shadow: 0 12px 48px #0002;
 }
 .cookie-consent[hidden] { display: none; }
-.cookie-consent h2 { margin: 0 0 8px; font-size: 20px; }
-.cookie-consent p { margin: 0 0 8px; color: var(--muted); line-height: 1.5; }
+.cookie-consent h2 { margin: 0 0 12px; font-size: 20px; }
+.cookie-consent p { margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.cookie-consent-copy p a { text-decoration: underline; }
 .cookie-consent-actions { display: flex; flex-direction: column; justify-content: center; gap: 10px; }
 .cookie-consent-actions button { min-height: 42px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
 .instagram-consent-placeholder { display: grid; justify-items: center; gap: 10px; padding: 28px 16px; border: 1px solid var(--line); border-radius: 12px; text-align: center; }
@@ -784,7 +785,7 @@ footer {
 .instagram-consent-placeholder button { border: 0; background: none; color: var(--accent, #617653); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
 
 @media (max-width: 640px) {
-  .cookie-consent { right: 12px; bottom: 12px; width: calc(100vw - 24px); grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+  .cookie-consent { left: 12px; right: 12px; bottom: 12px; width: auto; grid-template-columns: 1fr; gap: 12px; padding: 18px; }
   .cookie-consent-actions { flex-direction: row; }
   .cookie-consent-actions button { flex: 1; }
   .legal-block dl { grid-template-columns: 1fr; gap: 3px; }

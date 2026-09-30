@@ -1,17 +1,18 @@
 ---
+import { locales } from '../i18n/index.js';
+
 const { language } = Astro.props;
-const english = language === 'en';
+const text = locales[language].cookieConsent;
 ---
 
 <aside class="cookie-consent" id="cookie-consent" role="dialog" aria-modal="false" aria-labelledby="cookie-consent-title" hidden>
   <div class="cookie-consent-copy">
-    <h2 id="cookie-consent-title">{english ? 'Your privacy choices' : 'Tus preferencias de privacidad'}</h2>
-    <p>{english ? 'The optional Instagram feed is provided by SociableKIT. If enabled, it can store identifiers in your browser and send page and usage data to SociableKIT. Choose whether to load it.' : 'El feed opcional de Instagram lo ofrece SociableKIT. Al activarlo, puede guardar identificadores en el navegador y enviar a SociableKIT datos de uso y de la página. Elige si quieres cargarlo.'}</p>
-    <a href={english ? '/en/cookies/' : '/cookies/'}>{english ? 'Cookie information' : 'Información sobre cookies'}</a>
+    <h2 id="cookie-consent-title">{text.title}</h2>
+    <p>{text.description} <a href={language === 'en' ? '/en/cookies/' : '/cookies/'}>{text.informationLink}</a></p>
   </div>
   <div class="cookie-consent-actions">
-    <button type="button" data-cookie-choice="reject">{english ? 'Reject optional' : 'Rechazar opcionales'}</button>
-    <button type="button" data-cookie-choice="accept">{english ? 'Accept optional' : 'Aceptar opcionales'}</button>
+    <button type="button" data-cookie-choice="reject">{text.reject}</button>
+    <button type="button" data-cookie-choice="accept">{text.accept}</button>
   </div>
 </aside>
 

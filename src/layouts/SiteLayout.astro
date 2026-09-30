@@ -13,13 +13,11 @@ const { language, pageId } = Astro.props;
 const locale = locales[language];
 const page = locale.pages[pageId];
 const headerPageId = pageId === 'notFound' ? 'home' : pageId;
-const pageTitle = pageId === 'home' || pageId === 'notFound' ? page.title : `${page.title} · Kin Felina`;
+const pageTitle = pageId === 'home' || pageId === 'notFound' ? page.title : `${page.title} · ${locale.brandName}`;
 const canonical = new URL(getLocalizedPath(language, pageId), Astro.site);
 const socialImagePath = language === 'en' ? '/og/kin-felina-en-og.jpg' : '/og/kin-felina-og.jpg';
 const socialImage = new URL(socialImagePath, Astro.site).href;
-const socialImageAlt = language === 'en'
-  ? 'Kin Felina caring for community cats in Sorbas'
-  : 'Kin Felina cuida de los gatos comunitarios de Sorbas';
+const socialImageAlt = locale.metadata.socialImageAlt;
 const alternates = languages.map((alternateLanguage) => ({
   language: locales[alternateLanguage].locale,
   href: new URL(getLocalizedPath(alternateLanguage, pageId), Astro.site)
@@ -32,7 +30,7 @@ const structuredData = {
     {
       '@type': 'Organization',
       '@id': organizationUrl,
-      name: 'Asociación Kin Felina - Gestión Ética de Colonias Felinas',
+      name: locale.footer.legalName,
       url: Astro.site.href,
       logo: new URL(logo.src, Astro.site).href,
       email: 'asoc.kinfelina@gmail.com',
@@ -50,7 +48,7 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': websiteUrl,
       url: Astro.site.href,
-      name: 'Kin Felina',
+      name: locale.brandName,
       publisher: { '@id': organizationUrl },
       inLanguage: languages.map((item) => locales[item].locale)
     },
@@ -74,7 +72,7 @@ const structuredData = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={page.description} />
-    <meta name="author" content="Kin Felina" />
+    <meta name="author" content={locale.brandName} />
     <meta name="robots" content={pageId === 'notFound' ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="theme-color" content="#617653" />
     <title>{pageTitle}</title>
@@ -85,7 +83,7 @@ const structuredData = {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Kin Felina" />
+    <meta property="og:site_name" content={locale.brandName} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={page.description} />
     <meta property="og:url" content={canonical} />
