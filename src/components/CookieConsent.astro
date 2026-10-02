@@ -5,7 +5,7 @@ const { language } = Astro.props;
 const text = locales[language].cookieConsent;
 ---
 
-<aside class="cookie-consent" id="cookie-consent" role="dialog" aria-modal="false" aria-labelledby="cookie-consent-title" hidden>
+<aside class="cookie-consent" id="cookie-consent" aria-labelledby="cookie-consent-title" hidden>
   <div class="cookie-consent-copy">
     <h2 id="cookie-consent-title">{text.title}</h2>
     <p>{text.description} <a href={language === 'en' ? '/en/cookies/' : '/cookies/'}>{text.informationLink}</a></p>
