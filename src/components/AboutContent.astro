@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import catAbout1 from '../assets/img/gatos/DSC04607_edited.jpg';
 import catAbout2 from '../assets/img/gatos/DSC04947_edited.jpg';
 
-const { page } = Astro.props;
+const { page, locale } = Astro.props;
 ---
 
 <section class="content-section">
@@ -23,7 +23,7 @@ const { page } = Astro.props;
     <div class="about-photo-card">
       <Image
         src={catAbout1}
-        alt="Gatos comunitarios en Sorbas"
+        alt={page.photoCatsAlt}
         class="about-img"
         width={720}
         height={480}
@@ -34,7 +34,7 @@ const { page } = Astro.props;
     <div class="about-photo-card">
       <Image
         src={catAbout2}
-        alt="Seguimiento y bienestar animal"
+        alt={page.photoWelfareAlt}
         class="about-img"
         width={720}
         height={480}
@@ -68,7 +68,7 @@ const { page } = Astro.props;
 
 <section class="band about-network">
   <div class="wrap section-head">
-    <div class="kicker">KIN FELINA</div>
+    <div class="kicker">{locale.brandKicker}</div>
     <h2>{page.networkTitle}</h2>
     <p>{page.networkText}</p>
   </div>

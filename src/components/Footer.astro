@@ -13,11 +13,11 @@ const cookiesPath = language === 'en' ? '/en/cookies/' : '/cookies/';
     <div class="footer-signature">
       <span>{locale.footer.signature}</span>
     </div>
-    <nav class="footer-legal" aria-label={language === 'en' ? 'Legal information' : 'Información legal'}>
-      <a href={legalNoticePath}>{language === 'en' ? 'Legal notice' : 'Aviso legal'}</a>
-      <a href={privacyPath}>{language === 'en' ? 'Privacy' : 'Privacidad'}</a>
-      <a href={cookiesPath}>{language === 'en' ? 'Cookies' : 'Cookies'}</a>
-      <button type="button" class="open-cookie-settings">{language === 'en' ? 'Cookie settings' : 'Preferencias de cookies'}</button>
+    <nav class="footer-legal" aria-label={locale.footer.navigationLabel}>
+      <a href={legalNoticePath}>{locale.footer.legalNoticeLabel}</a>
+      <a href={privacyPath}>{locale.footer.privacyLabel}</a>
+      <a href={cookiesPath}>{locale.footer.cookiesLabel}</a>
+      <button type="button" class="open-cookie-settings">{locale.footer.cookieSettingsLabel}</button>
     </nav>
   </div>
 </footer>

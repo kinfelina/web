@@ -1,5 +1,5 @@
 ---
-const { page } = Astro.props;
+const { page, locale } = Astro.props;
 ---
 
 <section class="content-section philosophy-intro">
@@ -17,7 +17,7 @@ const { page } = Astro.props;
 <section class="philosophy-closing">
   <div class="wrap closing-grid">
     <div>
-      <div class="kicker">KIN FELINA</div>
+      <div class="kicker">{locale.brandKicker}</div>
       <h2>{page.closingTitle}</h2>
       <p>{page.closingText}</p>
     </div>

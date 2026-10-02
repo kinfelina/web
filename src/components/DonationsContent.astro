@@ -27,7 +27,7 @@ const { page } = Astro.props;
     <div class="donation-photo-card">
       <Image
         src={donationCat}
-        alt="Tu aportación ayuda al bienestar de los gatos comunitarios"
+        alt={page.photoAlt}
         class="donation-img"
         width={2000}
         height={1333}

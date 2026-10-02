@@ -49,7 +49,7 @@ const heroCatUrls = heroCats.map((c) => c.src);
           src={defaultHeroImage.src}
           width="800"
           height="800"
-          alt="Gato de Kin Felina"
+          alt={page.heroImageAlt}
           fetchpriority="high"
           loading="eager"
           decoding="async"
@@ -126,15 +126,15 @@ const heroCatUrls = heroCats.map((c) => c.src);
 <section class="content-section home-instagram">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Instagram</div>
+      <div class="kicker">{page.instagramEyebrow}</div>
       <h2>{page.instagramTitle}</h2>
       <p>{page.instagramText}</p>
     </div>
     <div class="instagram-feed-shell">
       <div class="sk-instagram-feed" data-embed-id="25717654"></div>
       <div class="instagram-consent-placeholder" id="instagram-consent-placeholder" hidden>
-        <p>{language === 'en' ? 'The Instagram feed is not loaded until you allow optional content.' : 'El feed de Instagram no se carga hasta que permitas el contenido opcional.'}</p>
-        <button type="button" class="open-cookie-settings">{language === 'en' ? 'Review privacy choices' : 'Revisar preferencias de privacidad'}</button>
+        <p>{page.instagramConsentText}</p>
+        <button type="button" class="open-cookie-settings">{page.reviewPrivacyChoices}</button>
       </div>
     </div>
   </div>
