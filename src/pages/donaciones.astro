@@ -1,0 +1,11 @@
+---
+import DonationsPage from '@/components/pages/DonationsPage.astro';
+import ContentPage from '@/layouts/ContentPage.astro';
+import { locales } from '@/i18n/index.js';
+
+const page = locales.es.pages.donations;
+---
+
+<ContentPage language="es" pageId="donations" page={page}>
+  <DonationsPage page={page} />
+</ContentPage>

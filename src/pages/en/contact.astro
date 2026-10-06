@@ -1,0 +1,11 @@
+---
+import ContactPage from '@/components/pages/ContactPage.astro';
+import ContentPage from '@/layouts/ContentPage.astro';
+import { locales } from '@/i18n/index.js';
+
+const page = locales.en.pages.contact;
+---
+
+<ContentPage language="en" pageId="contact" page={page}>
+  <ContactPage language="en" page={page} />
+</ContentPage>

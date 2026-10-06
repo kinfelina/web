@@ -11,7 +11,7 @@ const routeLabels = {
   contact: page.contactRouteLabel
 };
 
-const catImports = import.meta.glob('../assets/img/gatos/*.jpg', { eager: true });
+const catImports = import.meta.glob('/src/assets/img/gatos/*.jpg', { eager: true });
 const rawCatImages = Object.values(catImports).map((mod) => mod.default);
 
 const heroCats = await Promise.all(

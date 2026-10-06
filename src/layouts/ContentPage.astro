@@ -1,0 +1,16 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+
+const { language, pageId, page } = Astro.props;
+---
+
+<SiteLayout language={language} pageId={pageId}>
+  <section class="page-heading">
+    <div class="wrap">
+      <div class="kicker">{page.eyebrow}</div>
+      <h1>{page.title}</h1>
+      <p class="lead">{page.intro}</p>
+    </div>
+  </section>
+  <slot />
+</SiteLayout>
