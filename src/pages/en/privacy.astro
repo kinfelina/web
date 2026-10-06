@@ -1,6 +1,6 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import LegalContent from '../../components/LegalContent.astro';
-import { locales } from '../../i18n/index.js';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import LegalContent from '@/components/LegalContent.astro';
+import { locales } from '@/i18n/index.js';
 ---
 <SiteLayout language="en" pageId="privacy"><LegalContent language="en" kind="privacy" page={locales.en.pages.legal} pageMeta={locales.en.pages.privacy} /></SiteLayout>

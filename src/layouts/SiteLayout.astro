@@ -1,13 +1,13 @@
 ---
-import logo from '../assets/logo-kin-felina.jpeg';
+import logo from '@/assets/logo-kin-felina.jpeg';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/lora';
-import '../styles/styles.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import CookieConsent from '../components/CookieConsent.astro';
-import { languages, locales } from '../i18n/index.js';
-import { getLocalizedPath } from '../i18n/routes.js';
+import '@/styles/styles.css';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import CookieConsent from '@/components/CookieConsent.astro';
+import { languages, locales } from '@/i18n/index.js';
+import { getLocalizedPath } from '@/i18n/routes.js';
 
 const { language, pageId } = Astro.props;
 const locale = locales[language];

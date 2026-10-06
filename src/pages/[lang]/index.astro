@@ -1,6 +1,6 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import PageContent from '../../components/PageContent.astro';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import PageContent from '@/components/PageContent.astro';
 export function getStaticPaths() {
   return [{ params: { lang: 'en' }, props: { language: 'en' } }];
 }

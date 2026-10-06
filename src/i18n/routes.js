@@ -1,4 +1,4 @@
-import { locales } from './index.js';
+import { locales } from '@/i18n/index.js';
 
 export function getLocalizedPath(language, pageId) {
   const prefix = language === 'es' ? '' : `/${language}`;

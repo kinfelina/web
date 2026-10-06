@@ -1,11 +1,11 @@
 ---
-import AboutContent from './AboutContent.astro';
-import ColoniesContent from './ColoniesContent.astro';
-import ContactContent from './ContactContent.astro';
-import DonationsContent from './DonationsContent.astro';
-import HomeContent from './HomeContent.astro';
-import PhilosophyContent from './PhilosophyContent.astro';
-import { locales } from '../i18n/index.js';
+import AboutContent from '@/components/AboutContent.astro';
+import ColoniesContent from '@/components/ColoniesContent.astro';
+import ContactContent from '@/components/ContactContent.astro';
+import DonationsContent from '@/components/DonationsContent.astro';
+import HomeContent from '@/components/HomeContent.astro';
+import PhilosophyContent from '@/components/PhilosophyContent.astro';
+import { locales } from '@/i18n/index.js';
 
 const { language, pageId } = Astro.props;
 const locale = locales[language];
