@@ -1,9 +1,9 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import NotFoundContent from '../components/NotFoundContent.astro';
-import { locales } from '../i18n/index.js';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import NotFoundPage from '@/components/pages/NotFoundPage.astro';
+import { locales } from '@/i18n/index.js';
 ---
 
 <SiteLayout language="es" pageId="notFound">
-  <NotFoundContent language="es" page={locales.es.pages.notFound} />
+  <NotFoundPage language="es" page={locales.es.pages.notFound} />
 </SiteLayout>

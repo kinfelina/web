@@ -1,0 +1,61 @@
+/* Image gallery and photo cards */
+.about-photos {
+  padding-top: 0;
+  padding-bottom: 24px;
+}
+
+.about-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-14);
+}
+
+@media (max-width: 850px) {
+  .about-photos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-photo-card {
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: var(--border-width-image) solid var(--color-white);
+  aspect-ratio: 16 / 10;
+  background: var(--color-image-surface);
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.about-photo-card:hover .about-img {
+  transform: scale(1.03);
+}
+
+.donations-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-18);
+  align-items: start;
+}
+
+.donation-photo-card {
+  border-radius: var(--radius-4xl);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: var(--border-width-image) solid var(--color-white);
+  aspect-ratio: 16 / 9;
+  background: var(--color-image-surface);
+}
+
+.donation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

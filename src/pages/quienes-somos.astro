@@ -1,0 +1,12 @@
+---
+import AboutPage from '@/components/pages/AboutPage.astro';
+import ContentPage from '@/layouts/ContentPage.astro';
+import { locales } from '@/i18n/index.js';
+
+const locale = locales.es;
+const page = locale.pages.about;
+---
+
+<ContentPage language="es" pageId="about" page={page}>
+  <AboutPage language="es" locale={locale} page={page} />
+</ContentPage>

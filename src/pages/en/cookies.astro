@@ -1,6 +1,6 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import LegalContent from '../../components/LegalContent.astro';
-import { locales } from '../../i18n/index.js';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import LegalPage from '@/components/pages/LegalPage.astro';
+import { locales } from '@/i18n/index.js';
 ---
-<SiteLayout language="en" pageId="cookies"><LegalContent language="en" kind="cookies" page={locales.en.pages.legal} pageMeta={locales.en.pages.cookies} /></SiteLayout>
+<SiteLayout language="en" pageId="cookies"><LegalPage language="en" kind="cookies" page={locales.en.pages.legal} pageMeta={locales.en.pages.cookies} /></SiteLayout>

@@ -1,0 +1,86 @@
+.footer-association {
+  display: grid;
+  gap: var(--space-3)
+}
+
+.footer-association address {
+  font-style: normal
+}
+
+@media(max-width:850px) {
+  .desktop-language {
+    display: none;
+  }
+
+  .navlinks {
+    display: none
+  }
+
+  .mobile-language {
+    display: inline-flex;
+    margin: 8px;
+  }
+
+  .mobile-menu .mobile-language {
+    display: inline-flex;
+  }
+
+  .hero-grid,
+  .split {
+    grid-template-columns: 1fr
+  }
+
+  .cards,
+  .stats,
+  .philosophy-grid,
+  .closing-grid {
+    grid-template-columns: 1fr
+  }
+
+  .home-routes {
+    grid-template-columns: 1fr
+  }
+
+  .colony-program-grid,
+  .donation-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 45px
+  }
+
+  section {
+    padding: var(--space-34) 0
+  }
+}
+
+@media(max-width:560px) {
+  .wrap {
+    width: min(var(--max), calc(100% - var(--container-gutter-mobile)))
+  }
+
+  .nav-inner {
+    height: var(--nav-mobile-height)
+  }
+
+  .hero-actions .btn {
+    width: 100%
+  }
+
+  .donation {
+    padding: 25px
+  }
+
+  .donation-grid {
+    grid-template-columns: 1fr
+  }
+
+  .pay-pickup {
+    grid-column: auto;
+  }
+
+  .philosophy-closing {
+    padding: var(--space-34) 0
+  }
+}

@@ -1,0 +1,47 @@
+@media (max-width: 1020px) {
+  .navlinks {
+    gap: var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+
+  .brand {
+    gap: var(--space-4);
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 850px) {
+  .header-tools .desktop-language {
+    display: none;
+  }
+
+  .navlinks {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .mobile-menu .mobile-language {
+    display: inline-flex;
+    margin: var(--space-4) var(--space-6) var(--space-2);
+  }
+
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-15);
+  }
+
+  .about-photos-grid,
+  .donations-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-heading {
+    padding: 54px 0 34px;
+  }
+
+}

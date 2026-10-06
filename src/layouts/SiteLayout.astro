@@ -1,13 +1,13 @@
 ---
-import logo from '../assets/logo-kin-felina.jpeg';
+import logo from '@/assets/logo-kin-felina.jpeg';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/lora';
-import '../styles/styles.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import CookieConsent from '../components/CookieConsent.astro';
-import { languages, locales } from '../i18n/index.js';
-import { getLocalizedPath } from '../i18n/routes.js';
+import '@/styles/styles.scss';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import CookieConsent from '@/components/CookieConsent.astro';
+import { languages, locales } from '@/i18n/index.js';
+import { getLocalizedPath } from '@/i18n/routes.js';
 
 const { language, pageId } = Astro.props;
 const locale = locales[language];
@@ -100,7 +100,7 @@ const structuredData = {
     <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <script is:inline defer src="/script.js" data-website-id="76c265aa-5323-45a9-8bff-f7d6ae316a56" data-host-url="https://umami.qu4k3.com/"></script>
+    {import.meta.env.PROD && <script is:inline defer src="/script.js" data-website-id="76c265aa-5323-45a9-8bff-f7d6ae316a56" data-host-url="https://umami.qu4k3.com/"></script>}
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
   <body>
