@@ -1,0 +1,54 @@
+.pay {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+  border: var(--border-width) solid var(--line)
+}
+
+.pay small {
+  display: block;
+  color: var(--muted);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: .08em
+}
+
+.pay strong {
+  display: block;
+  font-size: var(--font-size-2xl);
+  margin-top: var(--space-4)
+}
+
+.pay code {
+  display: block;
+  margin-top: var(--space-5);
+  font-size: var(--font-size-xl);
+  word-break: break-word
+}
+
+form {
+  display: grid;
+  gap: var(--space-form-gap)
+}
+
+input,
+textarea {
+  width: 100%;
+  border: var(--border-width) solid var(--line);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-7) var(--space-8);
+  font: inherit;
+  outline: none
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--green);
+  box-shadow: var(--shadow-focus)
+}

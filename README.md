@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ee9ed7f0-279a-4574-9c4c-862a47c30278/deploy-status)](https://app.netlify.com/projects/kinfelina/deploys)
 
+![Kin Felina](./public/kinfelina-home.jpg)
+
 Web oficial de Kin Felina, asociación dedicada a la gestión ética y al bienestar de los gatos comunitarios en Sorbas, España. Está construida con Astro y genera páginas estáticas en español e inglés.
 
 ## Desarrollo
@@ -30,4 +32,4 @@ La salida estática se genera en `dist/` y se publica en Netlify. El español es
 - `src/pages/`: rutas estáticas por idioma.
 - `src/components/`: navegación, contenido de página y footer compartidos.
 - `src/layouts/`: metadatos y estructura HTML comunes.
-- `css/styles.css`: estilos base del sitio.
+- `src/styles/styles.scss`: punto de entrada de estilos; sus parciales separan tokens, base, componentes y estilos específicos.

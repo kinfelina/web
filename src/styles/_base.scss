@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: var(--line-height-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
+main {
+  flex: 1
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+.sk_branding a {
+  color: var(--muted) !important;
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - var(--container-gutter)));
+  margin: auto
+}

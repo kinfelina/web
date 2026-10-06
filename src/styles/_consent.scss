@@ -1,0 +1,112 @@
+.cookie-consent {
+  position: fixed;
+  z-index: var(--z-consent);
+  right: var(--space-10);
+  bottom: var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-11);
+  width: min(760px, calc(100vw - 40px));
+  padding: var(--space-11);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  color: var(--ink);
+  box-shadow: var(--shadow-consent);
+}
+
+.cookie-consent[hidden] {
+  display: none;
+}
+
+.cookie-consent h2 {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+}
+
+.cookie-consent p {
+  margin: 0 0 var(--space-4);
+  color: var(--muted);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-compact);
+}
+
+.cookie-consent-copy p a {
+  text-decoration: underline;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.cookie-consent-actions button {
+  min-height: var(--control-size);
+  padding: var(--space-4) var(--space-7);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-xs);
+  background: var(--color-white);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.instagram-consent-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  padding: var(--space-14) var(--space-8);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.instagram-consent-placeholder[hidden] {
+  display: none;
+}
+
+.instagram-consent-placeholder p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.instagram-consent-placeholder button {
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .cookie-consent {
+    left: var(--space-6);
+    right: var(--space-6);
+    bottom: var(--space-6);
+    width: auto;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-9);
+  }
+
+  .cookie-consent-actions {
+    flex-direction: row;
+  }
+
+  .cookie-consent-actions button {
+    flex: 1;
+  }
+
+  .legal-block dl {
+    grid-template-columns: 1fr;
+    gap: var(--space-minimal);
+  }
+
+  .legal-block dd {
+    margin-bottom: var(--space-5);
+  }
+}

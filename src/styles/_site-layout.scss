@@ -1,0 +1,311 @@
+/* Layout and component styles */
+.brand img {
+  border-radius: 0;
+}
+
+.brand-logo {
+  height: var(--space-27);
+  width: auto;
+  aspect-ratio: 896 / 834;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius-xs);
+}
+
+.brand:focus-visible,
+.navlinks a:focus-visible,
+.language-switch a:focus-visible,
+.mobile-menu summary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: var(--border-width-accent) solid var(--green);
+  outline-offset: 4px;
+}
+
+.navlinks a[aria-current="page"] {
+  color: var(--green-dark);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.language-switch a {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+}
+
+.language-switch a[aria-current="page"] {
+  color: var(--color-white);
+  background: var(--green);
+}
+
+.mobile-language {
+  display: none;
+}
+
+.mobile-menu .mobile-language {
+  position: static;
+  min-width: 0;
+  width: max-content;
+  align-self: start;
+  padding: var(--space-minimal);
+  border-radius: var(--radius-pill);
+  box-shadow: none;
+}
+
+.mobile-menu .mobile-language a {
+  padding: var(--space-3) var(--space-4);
+}
+
+.mobile-menu {
+  display: none;
+  position: relative;
+}
+
+.mobile-menu summary {
+  cursor: pointer;
+  width: var(--control-size);
+  height: var(--control-size);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-xs);
+  background: var(--color-white);
+  list-style: none;
+  display: grid;
+  place-items: center;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: var(--radius-2xs);
+  background: var(--green-dark);
+}
+
+.menu-icon {
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -6px;
+}
+
+.menu-icon::after {
+  top: 6px;
+}
+
+.mobile-menu nav {
+  position: absolute;
+  z-index: var(--z-menu);
+  top: calc(100% + var(--space-4));
+  right: 0;
+  display: grid;
+  min-width: 190px;
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--color-menu-surface);
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu nav a {
+  padding: var(--space-5) var(--space-6);
+}
+
+.mobile-menu-divider {
+  display: block;
+  height: 1px;
+  margin: var(--space-4) var(--space-6) var(--space-2);
+  background: var(--line);
+}
+
+.poster-brand img {
+  width: min(90%, 420px);
+  height: auto;
+}
+
+.page-heading {
+  padding: 82px 0 var(--space-26);
+  background: linear-gradient(130deg, var(--color-heading-start), var(--cream) 70%);
+}
+
+.page-heading h1 {
+  max-width: var(--content-width);
+}
+
+.page-heading .lead {
+  max-width: var(--reading-width);
+}
+
+.content-section {
+  padding-top: var(--space-32);
+}
+
+.donations-overview {
+  padding-bottom: var(--space-16);
+}
+
+.donations-overview + .colony-context {
+  padding-top: var(--space-24);
+}
+
+.not-found-section {
+  display: grid;
+  min-height: min(700px, calc(100vh - 190px));
+  place-items: center;
+  padding: var(--space-32) 0;
+  background: radial-gradient(ellipse at 50% 35%, var(--color-not-found-glow), transparent 58%);
+}
+
+.not-found-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.not-found-code {
+  margin: var(--space-11) 0 calc(-1 * var(--space-4));
+  color: var(--green);
+  font-family: var(--font-serif);
+  font-size: clamp(82px, 15vw, 150px);
+  font-weight: var(--font-weight-bold);
+  line-height: .85;
+}
+
+.not-found-card h1 {
+  max-width: var(--reading-width);
+  margin-bottom: var(--space-7);
+  font-size: clamp(36px, 6vw, 62px);
+  line-height: var(--line-height-heading);
+}
+
+.not-found-intro {
+  max-width: var(--text-width);
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--font-size-xl);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-14);
+}
+
+.card h2 {
+  font-family: inherit;
+  font-size: var(--font-size-2xl);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.route-card {
+  position: relative;
+  min-height: 140px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.route-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green);
+}
+
+.route-card h3 {
+  margin-top: 34px;
+}
+
+.route-arrow {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  color: var(--green);
+  font-size: var(--font-size-3xl);
+}
+
+.colony-note {
+  min-height: 330px;
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: var(--space-25);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-7);
+}
+
+.contact-details h2 {
+  margin-top: 0;
+}
+
+.contact-service-notice {
+  max-width: 390px;
+  margin: 0;
+  padding: var(--space-7) var(--space-8);
+  border-left: var(--border-width-accent) solid var(--green);
+  border-radius: 0 12px 12px 0;
+  background: var(--sage);
+  color: var(--green-dark);
+  font-size: var(--font-size-md);
+}
+
+.pay-pickup address {
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: var(--font-size-md);
+  font-style: normal;
+}
+
+.pay-pickup p {
+  margin: var(--space-5) 0 0;
+  color: var(--muted);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-copy);
+  overflow-wrap: anywhere;
+}
+
+.contact-page-grid form label {
+  margin-bottom: calc(-1 * var(--space-4));
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.contact-page-grid form .btn {
+  justify-self: start;
+}
